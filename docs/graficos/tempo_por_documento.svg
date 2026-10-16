@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 250" width="760" height="250" role="img" aria-label="Tempo por documento: extração e classificação">
+<title>Tempo por documento: extração e classificação</title>
+<style>
+  .bg{fill:#fcfcfb} .borda{stroke:rgba(11,11,11,.10);fill:none}
+  .t1{fill:#0b0b0b} .t2{fill:#52514e} .mut{fill:#898781}
+  .grid{stroke:#e1e0d9;stroke-width:1} .base{stroke:#c3c2b7;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .gap{stroke:#fcfcfb;stroke-width:2}
+  .s1s{stroke:#2a78d6} .s2s{stroke:#eb6834} .no{fill:#fcfcfb;stroke:#c3c2b7}
+  text{font-family:system-ui, -apple-system, "Segoe UI", sans-serif}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .borda{stroke:rgba(255,255,255,.10)}
+    .t1{fill:#f0efec} .t2{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a} .base{stroke:#383835}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .gap{stroke:#1a1a19}
+    .s1s{stroke:#3987e5} .s2s{stroke:#d95926} .no{fill:#1a1a19;stroke:#383835}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="760" height="250" rx="12"/>
+<rect class="borda" x=".5" y=".5" width="759" height="249" rx="12"/>
+<text x="24.0" y="34.0" class="t1" font-size="16" text-anchor="start" font-weight="600">Tempo por documento (mediana, segundos)</text>
+<text x="24.0" y="54.0" class="t2" font-size="12" text-anchor="start" font-weight="400">Com OCR, a extração local passa a ser a etapa mais lenta; o Jev fica estável em ~0,27 s</text>
+<rect class="s2" x="24" y="74" width="12" height="12" rx="3"/>
+<text x="42.0" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">extração do texto</text>
+<rect class="s1" x="188.4" y="74" width="12" height="12" rx="3"/>
+<text x="206.4" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">classificação no Jev</text>
+<line class="grid" x1="190.0" y1="100" x2="190.0" y2="206"/>
+<text x="190.0" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,00</text>
+<line class="grid" x1="281.1" y1="100" x2="281.1" y2="206"/>
+<text x="281.1" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,25</text>
+<line class="grid" x1="372.1" y1="100" x2="372.1" y2="206"/>
+<text x="372.1" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,50</text>
+<line class="grid" x1="463.2" y1="100" x2="463.2" y2="206"/>
+<text x="463.2" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,75</text>
+<line class="grid" x1="554.3" y1="100" x2="554.3" y2="206"/>
+<text x="554.3" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">1,00</text>
+<line class="grid" x1="645.4" y1="100" x2="645.4" y2="206"/>
+<text x="645.4" y="226.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">1,25</text>
+<text x="24.0" y="133.0" class="t1" font-size="13" text-anchor="start" font-weight="500">PDF com texto</text>
+<text x="24.0" y="149.0" class="mut" font-size="11" text-anchor="start" font-weight="400">208 documentos</text>
+<rect class="s2" x="190.0" y="116.0" width="2.2" height="26"/>
+<path class="s1" d="M192.2,116.0 h96.9 a4,4 0 0 1 4,4 v18.0 a4,4 0 0 1 -4,4 h-96.9 z"/>
+<line class="gap" x1="192.2" y1="116" x2="192.2" y2="142"/>
+<text x="301.1" y="133.5" class="t1" font-size="13" text-anchor="start" font-weight="600">0,28 s</text>
+<text x="24.0" y="181.0" class="t1" font-size="13" text-anchor="start" font-weight="500">PDF escaneado (OCR)</text>
+<text x="24.0" y="197.0" class="mut" font-size="11" text-anchor="start" font-weight="400">48 documentos</text>
+<rect class="s2" x="190.0" y="164.0" width="341.2" height="26"/>
+<path class="s1" d="M531.2,164.0 h93.1 a4,4 0 0 1 4,4 v18.0 a4,4 0 0 1 -4,4 h-93.1 z"/>
+<line class="gap" x1="531.2" y1="164" x2="531.2" y2="190"/>
+<text x="198.0" y="181.5" font-size="12" fill="#fff">OCR 0,94 s</text>
+<text x="636.2" y="181.5" class="t1" font-size="13" text-anchor="start" font-weight="600">1,20 s</text>
+<line class="base" x1="190" y1="100" x2="190" y2="206"/>
+</svg>

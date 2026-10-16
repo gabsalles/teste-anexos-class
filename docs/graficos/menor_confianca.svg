@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 414" width="760" height="414" role="img" aria-label="Documentos com menor confiança">
+<title>Documentos com menor confiança</title>
+<style>
+  .bg{fill:#fcfcfb} .borda{stroke:rgba(11,11,11,.10);fill:none}
+  .t1{fill:#0b0b0b} .t2{fill:#52514e} .mut{fill:#898781}
+  .grid{stroke:#e1e0d9;stroke-width:1} .base{stroke:#c3c2b7;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .gap{stroke:#fcfcfb;stroke-width:2}
+  .s1s{stroke:#2a78d6} .s2s{stroke:#eb6834} .no{fill:#fcfcfb;stroke:#c3c2b7}
+  text{font-family:system-ui, -apple-system, "Segoe UI", sans-serif}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .borda{stroke:rgba(255,255,255,.10)}
+    .t1{fill:#f0efec} .t2{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a} .base{stroke:#383835}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .gap{stroke:#1a1a19}
+    .s1s{stroke:#3987e5} .s2s{stroke:#d95926} .no{fill:#1a1a19;stroke:#383835}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="760" height="414" rx="12"/>
+<rect class="borda" x=".5" y=".5" width="759" height="413" rx="12"/>
+<text x="24.0" y="34.0" class="t1" font-size="16" text-anchor="start" font-weight="600">Os 6 documentos em que o Jev mais hesitou</text>
+<text x="24.0" y="54.0" class="t2" font-size="12" text-anchor="start" font-weight="400">Probabilidade da classe escolhida × segunda colocada. Todos foram classificados corretamente.</text>
+<rect class="s1" x="24" y="74" width="12" height="12" rx="3"/>
+<text x="42.0" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">classe escolhida (correta)</text>
+<rect class="s2" x="253.20000000000002" y="74" width="12" height="12" rx="3"/>
+<text x="271.2" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">segunda opção</text>
+<text x="24.0" y="119.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0023</text>
+<text x="24.0" y="135.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: despacho</text>
+<rect class="s1" x="200.0" y="106.0" width="309.6" height="24"/>
+<path class="s2" d="M509.6,106.0 h46.4 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-46.4 z"/>
+<line class="gap" x1="509.6" y1="106" x2="509.6" y2="130"/>
+<text x="208" y="122.5" font-size="12" fill="#fff">despacho 86%</text>
+<text x="566.0" y="122.5" class="t2" font-size="12" text-anchor="start" font-weight="400">certidão 14%</text>
+<text x="24.0" y="163.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0136</text>
+<text x="24.0" y="179.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: decisão interlocutória</text>
+<rect class="s1" x="200.0" y="150.0" width="324.0" height="24"/>
+<path class="s2" d="M524.0,150.0 h32.0 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-32.0 z"/>
+<line class="gap" x1="524.0" y1="150" x2="524.0" y2="174"/>
+<text x="208" y="166.5" font-size="12" fill="#fff">decisão interlocutória 90%</text>
+<text x="566.0" y="166.5" class="t2" font-size="12" text-anchor="start" font-weight="400">despacho 10%</text>
+<text x="24.0" y="207.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0231</text>
+<text x="24.0" y="223.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: decisão interlocutória</text>
+<rect class="s1" x="200.0" y="194.0" width="324.0" height="24"/>
+<path class="s2" d="M524.0,194.0 h32.0 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-32.0 z"/>
+<line class="gap" x1="524.0" y1="194" x2="524.0" y2="218"/>
+<text x="208" y="210.5" font-size="12" fill="#fff">decisão interlocutória 90%</text>
+<text x="566.0" y="210.5" class="t2" font-size="12" text-anchor="start" font-weight="400">agravo de instrumento 10%</text>
+<text x="24.0" y="251.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0046</text>
+<text x="24.0" y="267.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: decisão interlocutória</text>
+<rect class="s1" x="200.0" y="238.0" width="324.0" height="24"/>
+<path class="s2" d="M524.0,238.0 h32.0 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-32.0 z"/>
+<line class="gap" x1="524.0" y1="238" x2="524.0" y2="262"/>
+<text x="208" y="254.5" font-size="12" fill="#fff">decisão interlocutória 90%</text>
+<text x="566.0" y="254.5" class="t2" font-size="12" text-anchor="start" font-weight="400">despacho 10%</text>
+<text x="24.0" y="295.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0083</text>
+<text x="24.0" y="311.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: decisão interlocutória</text>
+<rect class="s1" x="200.0" y="282.0" width="345.6" height="24"/>
+<path class="s2" d="M545.6,282.0 h6.8 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-6.8 z"/>
+<line class="gap" x1="545.6" y1="282" x2="545.6" y2="306"/>
+<text x="208" y="298.5" font-size="12" fill="#fff">decisão interlocutória 96%</text>
+<text x="562.4" y="298.5" class="t2" font-size="12" text-anchor="start" font-weight="400">despacho 3%</text>
+<text x="24.0" y="339.0" class="t1" font-size="13" text-anchor="start" font-weight="500">doc_0013</text>
+<text x="24.0" y="355.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: decisão interlocutória</text>
+<rect class="s1" x="200.0" y="326.0" width="349.2" height="24"/>
+<path class="s2" d="M549.2,326.0 h6.8 a4,4 0 0 1 4,4 v16.0 a4,4 0 0 1 -4,4 h-6.8 z"/>
+<line class="gap" x1="549.2" y1="326" x2="549.2" y2="350"/>
+<text x="208" y="342.5" font-size="12" fill="#fff">decisão interlocutória 97%</text>
+<text x="566.0" y="342.5" class="t2" font-size="12" text-anchor="start" font-weight="400">despacho 3%</text>
+<line class="base" x1="200" y1="100" x2="200" y2="356"/>
+<text x="200.0" y="396.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0%</text>
+<text x="560.0" y="396.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">100%</text>
+</svg>

@@ -1,0 +1,257 @@
+arquivo,rotulo,subtipo,justica,tribunal,sistema_carimbo,assunto,paginas,escaneado,nivel_ruido,camada_texto,processo
+doc_0001.pdf,substabelecimento,substabelecimento_com_reserva,juizado_especial_civel,TJPR,projudi,consignado,1,nao,0,texto,4664345-58.2023.8.16.0670
+doc_0002.pdf,certidao,certidao_oficial_neg,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,1724517-22.2023.8.26.0158
+doc_0003.pdf,laudo_pericial,laudo_grafotecnico,estadual_civel,TJRJ,pje,negativacao,4,nao,0,texto,0817089-92.2023.8.19.0098
+doc_0004.pdf,oficio,oficio_banco,trabalho,TRT3,pjejt,equiparacao,1,nao,0,texto,6824629-67.2022.5.03.0083
+doc_0005.pdf,certidao,certidao_remessa,estadual_civel,TJPR,nenhum,revisional,1,sim,1,nenhuma (imagem),0935887-16.2023.8.16.0641
+doc_0006.pdf,despacho,despacho,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,0291603-42.2022.8.26.0151
+doc_0007.pdf,recurso_apelacao,apelacao,estadual_civel,TJRJ,pje,consignado,3,nao,0,texto,4291502-66.2022.8.19.0171
+doc_0008.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJSP,esaj,consignado,3,nao,0,texto,7442219-61.2023.8.26.0057
+doc_0009.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJPR,projudi,revisional,3,sim,3,ocr_com_erros,2117914-34.2025.8.16.0364
+doc_0010.pdf,contestacao,contestacao,estadual_civel,TJMG,pje,tarifas,2,nao,0,texto,4695453-02.2023.8.13.0699
+doc_0011.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJSP,esaj,fraude_pix,2,nao,0,texto,7046650-56.2023.8.26.0397
+doc_0012.pdf,substabelecimento,substabelecimento_com_reserva,trabalho,TRT2,pjejt,horas_extras,1,sim,1,nenhuma (imagem),0502108-59.2022.5.02.0238
+doc_0013.pdf,decisao_interlocutoria,decisao_saneamento,estadual_civel,TJMG,pje,tarifas,1,sim,2,ocr_com_erros,2320972-43.2023.8.13.0355
+doc_0014.pdf,certidao,certidao_publicacao,estadual_civel,TJRJ,pje,revisional,1,nao,0,texto,4413886-58.2021.8.19.0238
+doc_0015.pdf,sentenca,sentenca_merito,trabalho,TRT3,pjejt,equiparacao,2,nao,0,texto,1234328-46.2024.5.03.0699
+doc_0016.pdf,ata_audiencia,ata_instrucao_trab,trabalho,TRT3,pjejt,horas_extras,1,sim,3,nenhuma (imagem),1260732-33.2024.5.03.0862
+doc_0017.pdf,replica,manifestacao_defesa_trab,trabalho,TRT2,pjejt,equiparacao,2,nao,0,texto,4799208-41.2025.5.02.0501
+doc_0018.pdf,termo_acordo,termo_acordo_instrumento,juizado_especial_civel,TJMG,pje,negativacao,2,nao,0,texto,6644178-05.2021.8.13.0099
+doc_0019.pdf,oficio,oficio_serasa,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,2693402-75.2021.8.26.0209
+doc_0020.pdf,oficio,oficio_resposta,estadual_civel,TJMG,pje,tarifas,1,nao,0,texto,7631062-94.2023.8.13.0049
+doc_0021.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJPR,projudi,tarifas,3,nao,0,texto,2885339-81.2021.8.16.0233
+doc_0022.pdf,certidao,certidao_publicacao,juizado_especial_civel,TJPR,nenhum,consignado,1,nao,0,texto,4139850-47.2023.8.16.0107
+doc_0023.pdf,despacho,despacho,estadual_civel,TJRJ,pje,fraude_pix,1,sim,2,nenhuma (imagem),1087792-59.2022.8.19.0111
+doc_0024.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJSP,esaj,fraude_pix,2,sim,2,nenhuma (imagem),7403687-26.2021.8.26.0271
+doc_0025.pdf,alvara,mandado_levantamento_eletronico,estadual_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,0729383-13.2025.8.26.0549
+doc_0026.pdf,replica,replica,estadual_civel,TJRJ,nenhum,fraude_pix,2,nao,0,texto,6152578-09.2024.8.19.0062
+doc_0027.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJSP,esaj,revisional,3,nao,0,texto,7634827-21.2025.8.26.0347
+doc_0028.pdf,sentenca,sentenca_homolog,juizado_especial_civel,TJPR,projudi,tarifas,1,nao,0,texto,0116915-54.2024.8.16.0040
+doc_0029.pdf,substabelecimento,substabelecimento_sem_reserva,juizado_especial_civel,TJSP,esaj,consignado,1,sim,3,nenhuma (imagem),3078381-58.2023.8.26.0456
+doc_0030.pdf,procuracao,procuracao_pf,trabalho,TRT3,pjejt,horas_extras,1,sim,1,nenhuma (imagem),8397748-07.2023.5.03.0744
+doc_0031.pdf,alvara,mandado_levantamento_eletronico,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,4619884-89.2021.8.26.0541
+doc_0032.pdf,decisao_interlocutoria,decisao_saneamento,estadual_civel,TJSP,esaj,revisional,1,sim,1,nenhuma (imagem),9110523-69.2024.8.26.0426
+doc_0033.pdf,despacho,despacho,trabalho,TRT15,pjejt,horas_extras,1,nao,0,texto,8180076-39.2024.5.15.0828
+doc_0034.pdf,recurso_apelacao,recurso_inominado,juizado_especial_civel,TJSP,esaj,consignado,3,sim,2,nenhuma (imagem),2014350-89.2022.8.26.0162
+doc_0035.pdf,mandado,mandado_intimacao,juizado_especial_civel,TJSP,esaj,consignado,1,nao,0,texto,7857737-75.2021.8.26.0322
+doc_0036.pdf,laudo_pericial,laudo_contabil,trabalho,TRT2,pjejt,equiparacao,3,nao,0,texto,2153619-39.2025.5.02.0686
+doc_0037.pdf,laudo_pericial,laudo_grafotecnico,estadual_civel,TJSP,esaj,negativacao,4,nao,0,texto,7284360-60.2023.8.26.0225
+doc_0038.pdf,substabelecimento,substabelecimento_com_reserva,trabalho,TRT3,pjejt,horas_extras,1,sim,1,nenhuma (imagem),7330686-94.2021.5.03.0401
+doc_0039.pdf,despacho,despacho,estadual_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,8914418-30.2023.8.26.0564
+doc_0040.pdf,mandado,mandado_citacao,estadual_civel,TJSP,nenhum,revisional,1,nao,0,texto,8350679-36.2024.8.26.0458
+doc_0041.pdf,despacho,despacho,trabalho,TRT1,nenhum,horas_extras,1,nao,0,texto,3070417-47.2022.5.01.0245
+doc_0042.pdf,decisao_interlocutoria,decisao_saneamento,trabalho,TRT2,pjejt,equiparacao,1,nao,0,texto,3166511-27.2023.5.02.0170
+doc_0043.pdf,certidao,certidao_transito,trabalho,TRT1,pjejt,equiparacao,1,sim,2,nenhuma (imagem),8933122-11.2024.5.01.0271
+doc_0044.pdf,ata_audiencia,termo_audiencia_conciliacao,estadual_civel,TJMG,pje,negativacao,1,nao,0,texto,7897503-06.2025.8.13.0178
+doc_0045.pdf,procuracao,procuracao_pf,juizado_especial_civel,TJRJ,pje,consignado,1,sim,2,ocr_com_erros,1074924-24.2023.8.19.0399
+doc_0046.pdf,decisao_interlocutoria,decisao_sisbajud,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,1563615-84.2023.8.26.0097
+doc_0047.pdf,embargos_declaracao,embargos_declaracao_sentenca,juizado_especial_civel,TJPR,projudi,negativacao,1,nao,0,texto,7222263-13.2024.8.16.0663
+doc_0048.pdf,recurso_apelacao,recurso_ordinario_trab,trabalho,TRT3,pjejt,equiparacao,3,nao,0,texto,1468003-15.2024.5.03.0376
+doc_0049.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJPR,projudi,fraude_pix,4,nao,0,texto,5644313-18.2025.8.16.0226
+doc_0050.pdf,calculos_liquidacao,calculos_civel,estadual_civel,TJSP,nenhum,tarifas,1,nao,0,texto,1715769-37.2023.8.26.0049
+doc_0051.pdf,replica,manifestacao_defesa_trab,trabalho,TRT2,pjejt,horas_extras,2,nao,0,texto,8710892-26.2023.5.02.0057
+doc_0052.pdf,substabelecimento,substabelecimento_com_reserva,trabalho,TRT15,pjejt,equiparacao,1,nao,0,texto,2052785-15.2024.5.15.0035
+doc_0053.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJMG,pje,consignado,3,nao,0,texto,9935318-51.2024.8.13.0335
+doc_0054.pdf,laudo_pericial,laudo_contabil,trabalho,TRT1,nenhum,horas_extras,3,nao,0,texto,5456162-91.2023.5.01.0942
+doc_0055.pdf,laudo_pericial,laudo_grafotecnico,estadual_civel,TJSP,esaj,consignado,3,nao,0,texto,4190889-67.2024.8.26.0690
+doc_0056.pdf,certidao,certidao_oficial_pos,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,7274232-88.2024.8.26.0469
+doc_0057.pdf,peticao_inicial,reclamacao_trabalhista,trabalho,TRT2,pjejt,equiparacao,2,nao,0,texto,0751258-56.2023.5.02.0184
+doc_0058.pdf,recurso_apelacao,apelacao,estadual_civel,TJPR,projudi,negativacao,3,nao,0,texto,8554426-42.2023.8.16.0387
+doc_0059.pdf,recurso_apelacao,recurso_inominado,juizado_especial_civel,TJSP,esaj,tarifas,3,nao,0,texto,1352769-64.2023.8.26.0073
+doc_0060.pdf,acordao,acordao_trt,trabalho,TRT1,pjejt,equiparacao,2,nao,0,texto,5669352-41.2024.5.01.0704
+doc_0061.pdf,termo_acordo,termo_acordo_instrumento,estadual_civel,TJSP,esaj,revisional,2,nao,0,texto,1063470-13.2023.8.26.0121
+doc_0062.pdf,alvara,alvara,trabalho,TRT3,pjejt,equiparacao,1,sim,1,nenhuma (imagem),5013072-39.2024.5.03.0221
+doc_0063.pdf,peticao_inicial,peticao_inicial,estadual_civel,TJMG,nenhum,revisional,3,nao,0,texto,6879197-62.2022.8.13.0161
+doc_0064.pdf,recurso_apelacao,recurso_ordinario_trab,trabalho,TRT3,pjejt,horas_extras,3,nao,0,texto,0330302-44.2023.5.03.0350
+doc_0065.pdf,certidao,certidao_oficial_neg,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,1912671-16.2022.8.26.0657
+doc_0066.pdf,sentenca,sentenca_merito,estadual_civel,TJSP,nenhum,negativacao,2,nao,0,texto,4951419-34.2022.8.26.0312
+doc_0067.pdf,despacho,despacho,juizado_especial_civel,TJMG,pje,consignado,1,nao,0,texto,1629863-06.2024.8.13.0664
+doc_0068.pdf,despacho,despacho,estadual_civel,TJSP,esaj,consignado,1,sim,3,nenhuma (imagem),8611623-52.2024.8.26.0609
+doc_0069.pdf,recurso_apelacao,apelacao,estadual_civel,TJSP,esaj,negativacao,3,nao,0,texto,4024380-24.2022.8.26.0042
+doc_0070.pdf,alvara,alvara,trabalho,TRT1,pjejt,horas_extras,1,nao,0,texto,0319407-73.2024.5.01.0308
+doc_0071.pdf,decisao_interlocutoria,decisao_saneamento,estadual_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,5720890-67.2022.8.26.0063
+doc_0072.pdf,mandado,mandado_citacao_penhora_trab,trabalho,TRT1,pjejt,horas_extras,1,nao,0,texto,1629306-75.2025.5.01.0629
+doc_0073.pdf,procuracao,procuracao_com_declaracao,juizado_especial_civel,TJMG,pje,fraude_pix,2,sim,2,nenhuma (imagem),0364909-25.2022.8.13.0242
+doc_0074.pdf,decisao_interlocutoria,decisao_impugnacao,juizado_especial_civel,TJRJ,pje,tarifas,1,nao,0,texto,7075651-94.2022.8.19.0307
+doc_0075.pdf,certidao,certidao_remessa,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,9855452-55.2024.8.26.0618
+doc_0076.pdf,substabelecimento,substabelecimento_com_reserva,estadual_civel,TJSP,esaj,tarifas,1,sim,3,nenhuma (imagem),1381319-74.2023.8.26.0039
+doc_0077.pdf,sentenca,sentenca_merito,trabalho,TRT9,pjejt,equiparacao,2,nao,0,texto,8283304-89.2022.5.09.0206
+doc_0078.pdf,sentenca,sentenca_homolog,trabalho,TRT15,pjejt,horas_extras,1,nao,0,texto,0156659-81.2024.5.15.0833
+doc_0079.pdf,substabelecimento,substabelecimento_com_reserva,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,6503641-63.2023.8.26.0636
+doc_0080.pdf,acordao,acordao_turma_recursal,juizado_especial_civel,TJPR,projudi,consignado,1,nao,0,texto,5583885-72.2023.8.16.0345
+doc_0081.pdf,ata_audiencia,termo_audiencia_conciliacao,estadual_civel,TJSP,esaj,consignado,1,sim,1,ocr_com_erros,2498828-91.2021.8.26.0390
+doc_0082.pdf,procuracao,procuracao_pf,estadual_civel,TJSP,esaj,tarifas,1,sim,1,nenhuma (imagem),8818102-32.2024.8.26.0333
+doc_0083.pdf,decisao_interlocutoria,decisao_gratuidade,trabalho,TRT15,pjejt,horas_extras,1,sim,2,ocr_com_erros,2446834-62.2024.5.15.0200
+doc_0084.pdf,mandado,mandado_intimacao,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,9540899-26.2023.8.26.0258
+doc_0085.pdf,certidao,certidao_oficial_pos,juizado_especial_civel,TJMG,pje,consignado,1,sim,2,nenhuma (imagem),5861988-36.2024.8.13.0094
+doc_0086.pdf,contestacao,contestacao,juizado_especial_civel,TJPR,projudi,consignado,3,nao,0,texto,3315550-79.2022.8.16.0595
+doc_0087.pdf,certidao,certidao_ato_ordinatorio,trabalho,TRT3,pjejt,horas_extras,1,nao,0,texto,5857109-53.2025.5.03.0587
+doc_0088.pdf,procuracao,procuracao_pj,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,2776789-77.2023.8.26.0286
+doc_0089.pdf,contestacao,contestacao_trab,trabalho,TRT3,pjejt,horas_extras,3,nao,0,texto,9205564-25.2024.5.03.0662
+doc_0090.pdf,ata_audiencia,termo_audiencia_com_acordo,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,8556563-90.2024.8.26.0384
+doc_0091.pdf,ata_audiencia,termo_audiencia_instrucao,estadual_civel,TJMG,pje,consignado,1,sim,1,nenhuma (imagem),0586474-83.2022.8.13.0558
+doc_0092.pdf,ata_audiencia,termo_audiencia_instrucao,estadual_civel,TJSP,nenhum,tarifas,2,nao,0,texto,0898996-85.2021.8.26.0350
+doc_0093.pdf,calculos_liquidacao,calculos_civel,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,4272237-06.2025.8.26.0680
+doc_0094.pdf,contrarrazoes,contrarrazoes_ro,trabalho,TRT1,pjejt,horas_extras,3,nao,0,texto,6702210-29.2023.5.01.0677
+doc_0095.pdf,contestacao,contestacao,estadual_civel,TJSP,nenhum,revisional,3,nao,0,texto,8347196-50.2022.8.26.0043
+doc_0096.pdf,sentenca,sentenca_homolog,estadual_civel,TJRJ,pje,consignado,1,nao,0,texto,2677098-87.2025.8.19.0295
+doc_0097.pdf,calculos_liquidacao,calculos_trab_pjecalc,trabalho,TRT2,nenhum,horas_extras,2,nao,0,texto,3189462-22.2022.5.02.0858
+doc_0098.pdf,contestacao,contestacao,estadual_civel,TJMG,pje,revisional,3,sim,3,ocr_com_erros,0546953-85.2024.8.13.0583
+doc_0099.pdf,certidao,certidao_oficial_pos,estadual_civel,TJMG,pje,revisional,1,sim,1,nenhuma (imagem),3619579-94.2024.8.13.0116
+doc_0100.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJSP,nenhum,negativacao,4,nao,0,texto,4829625-65.2023.8.26.0456
+doc_0101.pdf,ata_audiencia,termo_audiencia_instrucao,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,9424334-17.2023.8.26.0601
+doc_0102.pdf,embargos_declaracao,embargos_declaracao_acordao,juizado_especial_civel,TJMG,pje,negativacao,2,nao,0,texto,1276001-80.2024.8.13.0249
+doc_0103.pdf,peticao_inicial,peticao_inicial,estadual_civel,TJMG,pje,revisional,3,nao,0,texto,4067570-96.2022.8.13.0495
+doc_0104.pdf,mandado,mandado_penhora,trabalho,TRT1,pjejt,horas_extras,1,nao,0,texto,0085086-35.2023.5.01.0759
+doc_0105.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJSP,esaj,revisional,3,nao,0,texto,7943078-64.2021.8.26.0453
+doc_0106.pdf,acordao,acordao_tj,estadual_civel,TJMG,pje,fraude_pix,3,nao,0,texto,2587202-29.2025.8.13.0609
+doc_0107.pdf,certidao,certidao_ato_ordinatorio,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,3543789-60.2024.8.26.0046
+doc_0108.pdf,sentenca,sentenca_extincao,estadual_civel,TJSP,esaj,negativacao,1,sim,1,nenhuma (imagem),5490436-68.2023.8.26.0220
+doc_0109.pdf,sentenca,sentenca_merito,estadual_civel,TJSP,esaj,revisional,2,nao,0,texto,2656455-19.2025.8.26.0682
+doc_0110.pdf,despacho,despacho,estadual_civel,TJMG,nenhum,revisional,1,nao,0,texto,0732795-44.2021.8.13.0228
+doc_0111.pdf,despacho,despacho,juizado_especial_civel,TJPR,projudi,negativacao,1,nao,0,texto,0755567-02.2021.8.16.0136
+doc_0112.pdf,mandado,mandado_citacao,estadual_civel,TJSP,esaj,revisional,1,sim,3,ocr_com_erros,4277328-64.2021.8.26.0665
+doc_0113.pdf,oficio,oficio_banco,estadual_civel,TJMG,pje,tarifas,1,nao,0,texto,5287117-46.2025.8.13.0195
+doc_0114.pdf,despacho,despacho,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,6279218-73.2025.8.26.0047
+doc_0115.pdf,procuracao,procuracao_pj,estadual_civel,TJPR,projudi,fraude_pix,1,sim,2,nenhuma (imagem),7199613-57.2022.8.16.0625
+doc_0116.pdf,decisao_interlocutoria,decisao_gratuidade,juizado_especial_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,3603896-81.2023.8.26.0571
+doc_0117.pdf,procuracao,procuracao_com_declaracao,juizado_especial_civel,TJRJ,pje,consignado,2,nao,0,texto,8239541-88.2024.8.19.0028
+doc_0118.pdf,peticao_inicial,peticao_inicial,estadual_civel,TJSP,esaj,negativacao,4,nao,0,texto,1292060-90.2024.8.26.0085
+doc_0119.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJSP,esaj,negativacao,4,nao,0,texto,7555953-77.2021.8.26.0180
+doc_0120.pdf,contrarrazoes,contrarrazoes_ri,juizado_especial_civel,TJRJ,pje,tarifas,3,sim,2,ocr_com_erros,9459232-40.2024.8.19.0270
+doc_0121.pdf,ata_audiencia,termo_audiencia_conciliacao,juizado_especial_civel,TJRJ,pje,negativacao,1,sim,1,nenhuma (imagem),2334589-58.2024.8.19.0520
+doc_0122.pdf,contestacao,contestacao,juizado_especial_civel,TJPR,projudi,tarifas,2,nao,0,texto,8368341-88.2023.8.16.0502
+doc_0123.pdf,termo_acordo,termo_acordo_termo,juizado_especial_civel,TJPR,projudi,fraude_pix,2,sim,1,nenhuma (imagem),4341000-77.2023.8.16.0528
+doc_0124.pdf,oficio,oficio_resposta,juizado_especial_civel,TJSP,esaj,tarifas,1,sim,1,nenhuma (imagem),9337821-24.2023.8.26.0188
+doc_0125.pdf,recurso_apelacao,recurso_inominado,juizado_especial_civel,TJRJ,pje,tarifas,3,nao,0,texto,9422265-81.2023.8.19.0156
+doc_0126.pdf,contestacao,contestacao,juizado_especial_civel,TJSP,esaj,negativacao,3,nao,0,texto,1289739-52.2022.8.26.0538
+doc_0127.pdf,despacho,despacho,trabalho,TRT15,nenhum,horas_extras,1,sim,2,nenhuma (imagem),5096795-33.2021.5.15.0089
+doc_0128.pdf,certidao,certidao_oficial_neg,juizado_especial_civel,TJPR,projudi,consignado,1,nao,0,texto,1675973-76.2023.8.16.0450
+doc_0129.pdf,ata_audiencia,termo_audiencia_com_acordo,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,7321723-68.2023.8.26.0100
+doc_0130.pdf,certidao,certidao_ato_ordinatorio,estadual_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,7387189-69.2024.8.26.0586
+doc_0131.pdf,mandado,mandado_citacao,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,4267240-56.2022.8.26.0139
+doc_0132.pdf,decisao_interlocutoria,decisao_impugnacao,juizado_especial_civel,TJMG,pje,fraude_pix,1,nao,0,texto,9596484-36.2022.8.13.0654
+doc_0133.pdf,peticao_inicial,reclamacao_trabalhista,trabalho,TRT15,pjejt,horas_extras,3,nao,0,texto,0640425-15.2022.5.15.0678
+doc_0134.pdf,procuracao,procuracao_pf,trabalho,TRT15,pjejt,horas_extras,1,sim,1,nenhuma (imagem),7962578-22.2022.5.15.0459
+doc_0135.pdf,embargos_declaracao,embargos_declaracao_sentenca,estadual_civel,TJSP,esaj,negativacao,1,nao,0,texto,5826863-55.2022.8.26.0695
+doc_0136.pdf,decisao_interlocutoria,decisao_sisbajud,juizado_especial_civel,TJMG,pje,negativacao,1,nao,0,texto,6022818-51.2024.8.13.0554
+doc_0137.pdf,replica,replica,estadual_civel,TJSP,esaj,revisional,2,nao,0,texto,4387475-24.2022.8.26.0213
+doc_0138.pdf,decisao_interlocutoria,decisao_sisbajud,trabalho,TRT15,pjejt,horas_extras,1,nao,0,texto,9544678-12.2021.5.15.0259
+doc_0139.pdf,mandado,mandado_intimacao,juizado_especial_civel,TJMG,pje,fraude_pix,1,nao,0,texto,0054189-88.2022.8.13.0657
+doc_0140.pdf,decisao_interlocutoria,decisao_tutela,estadual_civel,TJRJ,pje,consignado,1,sim,1,nenhuma (imagem),6229362-70.2023.8.19.0350
+doc_0141.pdf,calculos_liquidacao,calculos_trab_pjecalc,trabalho,TRT2,pjejt,equiparacao,1,sim,1,nenhuma (imagem),7370634-48.2022.5.02.0009
+doc_0142.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJMG,pje,consignado,3,nao,0,texto,2004557-97.2024.8.13.0072
+doc_0143.pdf,despacho,despacho,estadual_civel,TJMG,pje,revisional,1,nao,0,texto,8380674-15.2022.8.13.0042
+doc_0144.pdf,despacho,despacho,estadual_civel,TJSP,esaj,negativacao,1,nao,0,texto,5068560-08.2023.8.26.0161
+doc_0145.pdf,embargos_declaracao,embargos_declaracao_sentenca,trabalho,TRT1,pjejt,horas_extras,2,nao,0,texto,4940397-83.2023.5.01.0475
+doc_0146.pdf,contestacao,contestacao,juizado_especial_civel,TJSP,nenhum,tarifas,2,nao,0,texto,9136873-41.2021.8.26.0510
+doc_0147.pdf,decisao_interlocutoria,decisao_tutela,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,4654434-79.2022.8.26.0055
+doc_0148.pdf,decisao_interlocutoria,decisao_tutela,juizado_especial_civel,TJRJ,pje,negativacao,1,sim,1,nenhuma (imagem),9134821-29.2025.8.19.0251
+doc_0149.pdf,acordao,acordao_trt,trabalho,TRT9,pjejt,horas_extras,2,nao,0,texto,6927009-28.2023.5.09.0808
+doc_0150.pdf,decisao_interlocutoria,decisao_saneamento,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,7897472-33.2022.8.26.0047
+doc_0151.pdf,laudo_pericial,laudo_grafotecnico,estadual_civel,TJSP,esaj,consignado,3,nao,0,texto,3587814-98.2024.8.26.0551
+doc_0152.pdf,mandado,mandado_citacao,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,4999845-63.2024.8.26.0488
+doc_0153.pdf,mandado,mandado_citacao,estadual_civel,TJMG,pje,tarifas,1,nao,0,texto,2513939-17.2021.8.13.0087
+doc_0154.pdf,oficio,oficio_resposta,juizado_especial_civel,TJPR,projudi,tarifas,1,nao,0,texto,9404777-34.2022.8.16.0544
+doc_0155.pdf,termo_acordo,termo_acordo_peticao,estadual_civel,TJMG,pje,revisional,1,nao,0,texto,7492709-85.2024.8.13.0325
+doc_0156.pdf,procuracao,procuracao_com_declaracao,estadual_civel,TJSP,esaj,negativacao,2,sim,2,ocr_com_erros,0546034-97.2023.8.26.0283
+doc_0157.pdf,certidao,certidao_ato_ordinatorio,juizado_especial_civel,TJMG,pje,tarifas,1,nao,0,texto,4660394-86.2024.8.13.0126
+doc_0158.pdf,calculos_liquidacao,calculos_civel,estadual_civel,TJSP,esaj,negativacao,1,nao,0,texto,0217119-20.2021.8.26.0627
+doc_0159.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJSP,esaj,negativacao,3,sim,1,ocr_com_erros,5687818-75.2022.8.26.0585
+doc_0160.pdf,despacho,despacho,trabalho,TRT15,pjejt,equiparacao,1,nao,0,texto,1835721-66.2025.5.15.0220
+doc_0161.pdf,alvara,alvara,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,6060707-59.2024.8.26.0107
+doc_0162.pdf,alvara,alvara,trabalho,TRT9,pjejt,equiparacao,1,nao,0,texto,8256295-71.2021.5.09.0697
+doc_0163.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJSP,esaj,tarifas,3,nao,0,texto,1868691-41.2025.8.26.0357
+doc_0164.pdf,mandado,mandado_citacao,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,9215387-42.2023.8.26.0573
+doc_0165.pdf,procuracao,procuracao_pj,estadual_civel,TJRJ,pje,revisional,1,sim,3,ocr_com_erros,5745660-69.2022.8.19.0597
+doc_0166.pdf,despacho,despacho,estadual_civel,TJMG,pje,fraude_pix,1,nao,0,texto,8069886-57.2025.8.13.0091
+doc_0167.pdf,acordao,acordao_turma_recursal,juizado_especial_civel,TJSP,esaj,consignado,2,sim,1,ocr_com_erros,1324525-81.2023.8.26.0605
+doc_0168.pdf,substabelecimento,substabelecimento_com_reserva,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,1191924-37.2023.8.26.0274
+doc_0169.pdf,decisao_interlocutoria,decisao_tutela,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,6197862-04.2022.8.26.0066
+doc_0170.pdf,contestacao,contestacao,estadual_civel,TJSP,esaj,consignado,3,nao,0,texto,5022288-62.2022.8.26.0040
+doc_0171.pdf,replica,manifestacao_defesa_trab,trabalho,TRT2,pjejt,horas_extras,2,nao,0,texto,2476594-93.2025.5.02.0940
+doc_0172.pdf,recurso_apelacao,apelacao,estadual_civel,TJSP,esaj,negativacao,3,nao,0,texto,1186769-17.2024.8.26.0695
+doc_0173.pdf,replica,replica,estadual_civel,TJSP,nenhum,revisional,1,nao,0,texto,0548178-19.2022.8.26.0044
+doc_0174.pdf,laudo_pericial,laudo_contabil,trabalho,TRT1,pjejt,horas_extras,3,nao,0,texto,0084435-20.2024.5.01.0645
+doc_0175.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJPR,projudi,negativacao,3,nao,0,texto,4986931-74.2023.8.16.0004
+doc_0176.pdf,contrarrazoes,contrarrazoes_ro,trabalho,TRT15,pjejt,equiparacao,3,nao,0,texto,2440224-98.2022.5.15.0798
+doc_0177.pdf,procuracao,procuracao_pj,estadual_civel,TJSP,esaj,revisional,2,sim,1,nenhuma (imagem),7058745-05.2022.8.26.0252
+doc_0178.pdf,embargos_declaracao,embargos_declaracao_acordao,estadual_civel,TJSP,nenhum,negativacao,2,sim,2,nenhuma (imagem),5669349-12.2023.8.26.0337
+doc_0179.pdf,contestacao,contestacao,estadual_civel,TJSP,esaj,negativacao,3,nao,0,texto,0453855-33.2024.8.26.0632
+doc_0180.pdf,decisao_interlocutoria,decisao_sisbajud,estadual_civel,TJRJ,nenhum,consignado,1,nao,0,texto,3634474-45.2022.8.19.0510
+doc_0181.pdf,replica,replica,estadual_civel,TJSP,esaj,consignado,2,nao,0,texto,6367148-84.2023.8.26.0117
+doc_0182.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJSP,esaj,negativacao,3,nao,0,texto,5272764-24.2024.8.26.0502
+doc_0183.pdf,decisao_interlocutoria,decisao_saneamento,estadual_civel,TJPR,projudi,fraude_pix,1,sim,1,ocr_com_erros,2074521-98.2023.8.16.0115
+doc_0184.pdf,contrarrazoes,contrarrazoes_ri,juizado_especial_civel,TJSP,nenhum,fraude_pix,3,nao,0,texto,7558256-28.2024.8.26.0546
+doc_0185.pdf,certidao,certidao_remessa,juizado_especial_civel,TJSP,esaj,tarifas,1,nao,0,texto,9532866-53.2021.8.26.0214
+doc_0186.pdf,mandado,mandado_citacao,estadual_civel,TJSP,esaj,negativacao,1,nao,0,texto,9447774-95.2021.8.26.0606
+doc_0187.pdf,sentenca,sentenca_merito,estadual_civel,TJSP,esaj,fraude_pix,2,nao,0,texto,3647848-56.2022.8.26.0083
+doc_0188.pdf,certidao,certidao_publicacao,estadual_civel,TJSP,esaj,consignado,1,sim,1,nenhuma (imagem),8988268-46.2021.8.26.0287
+doc_0189.pdf,embargos_declaracao,embargos_declaracao_acordao,estadual_civel,TJMG,pje,consignado,2,sim,1,nenhuma (imagem),8037240-51.2021.8.13.0667
+doc_0190.pdf,recurso_apelacao,recurso_inominado,juizado_especial_civel,TJSP,esaj,fraude_pix,3,nao,0,texto,0871573-15.2022.8.26.0222
+doc_0191.pdf,recurso_apelacao,apelacao,estadual_civel,TJSP,nenhum,revisional,3,nao,0,texto,9817184-62.2024.8.26.0316
+doc_0192.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJSP,nenhum,fraude_pix,3,nao,0,texto,5440729-39.2024.8.26.0110
+doc_0193.pdf,sentenca,sentenca_merito,estadual_civel,TJPR,projudi,negativacao,2,nao,0,texto,8329847-83.2022.8.16.0440
+doc_0194.pdf,oficio,oficio_inss,juizado_especial_civel,TJRJ,pje,consignado,1,nao,0,texto,9365598-81.2023.8.19.0057
+doc_0195.pdf,ata_audiencia,termo_audiencia_instrucao,juizado_especial_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,6645467-05.2024.8.26.0099
+doc_0196.pdf,embargos_declaracao,embargos_declaracao_sentenca,estadual_civel,TJSP,esaj,consignado,1,sim,1,nenhuma (imagem),6617470-34.2023.8.26.0535
+doc_0197.pdf,contestacao,contestacao_trab,trabalho,TRT9,pjejt,equiparacao,2,sim,2,ocr_com_erros,7418082-90.2023.5.09.0460
+doc_0198.pdf,agravo_instrumento,agravo_instrumento,estadual_civel,TJRJ,pje,consignado,2,nao,0,texto,0126336-69.2022.8.19.0682
+doc_0199.pdf,contestacao,contestacao,juizado_especial_civel,TJSP,nenhum,negativacao,3,nao,0,texto,3767637-92.2023.8.26.0316
+doc_0200.pdf,despacho,despacho,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,6736388-85.2022.8.26.0614
+doc_0201.pdf,despacho,despacho,estadual_civel,TJSP,esaj,revisional,1,nao,0,texto,2406583-32.2023.8.26.0571
+doc_0202.pdf,oficio,oficio_transferencia,estadual_civel,TJPR,projudi,revisional,1,sim,3,nenhuma (imagem),5402383-45.2023.8.16.0429
+doc_0203.pdf,calculos_liquidacao,calculos_civel,estadual_civel,TJMG,pje,negativacao,1,nao,0,texto,4787821-51.2023.8.13.0304
+doc_0204.pdf,replica,replica,estadual_civel,TJSP,esaj,negativacao,2,sim,1,nenhuma (imagem),3113153-70.2023.8.26.0028
+doc_0205.pdf,calculos_liquidacao,calculos_civel,juizado_especial_civel,TJSP,esaj,consignado,1,nao,0,texto,0109045-41.2025.8.26.0493
+doc_0206.pdf,alvara,alvara,trabalho,TRT15,pjejt,equiparacao,1,nao,0,texto,4677416-35.2022.5.15.0802
+doc_0207.pdf,certidao,certidao_remessa,estadual_civel,TJSP,nenhum,negativacao,1,nao,0,texto,4169880-06.2024.8.26.0381
+doc_0208.pdf,replica,replica,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,1183019-06.2023.8.26.0448
+doc_0209.pdf,contestacao,contestacao_trab,trabalho,TRT2,pjejt,equiparacao,2,nao,0,texto,7623683-70.2025.5.02.0120
+doc_0210.pdf,acordao,acordao_tj,estadual_civel,TJRJ,pje,negativacao,3,nao,0,texto,4952196-66.2024.8.19.0272
+doc_0211.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJMG,pje,tarifas,3,sim,1,ocr_com_erros,0372070-64.2024.8.13.0453
+doc_0212.pdf,termo_acordo,termo_acordo_peticao,estadual_civel,TJSP,nenhum,consignado,2,sim,2,ocr_com_erros,8596115-85.2024.8.26.0247
+doc_0213.pdf,certidao,certidao_publicacao,trabalho,TRT1,pjejt,equiparacao,1,nao,0,texto,3766483-18.2023.5.01.0435
+doc_0214.pdf,certidao,certidao_oficial_neg,estadual_civel,TJSP,esaj,tarifas,1,sim,1,nenhuma (imagem),4077775-27.2024.8.26.0149
+doc_0215.pdf,termo_acordo,termo_acordo_termo,juizado_especial_civel,TJSP,nenhum,tarifas,2,nao,0,texto,2745889-89.2022.8.26.0531
+doc_0216.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJPR,projudi,negativacao,3,nao,0,texto,9506728-28.2023.8.16.0353
+doc_0217.pdf,certidao,certidao_decurso,estadual_civel,TJMG,pje,consignado,1,sim,2,nenhuma (imagem),4201404-48.2022.8.13.0641
+doc_0218.pdf,laudo_pericial,laudo_contabil,trabalho,TRT15,pjejt,horas_extras,3,nao,0,texto,6671464-67.2025.5.15.0436
+doc_0219.pdf,procuracao,procuracao_pf,juizado_especial_civel,TJSP,nenhum,fraude_pix,1,sim,2,nenhuma (imagem),6946662-20.2022.8.26.0293
+doc_0220.pdf,sentenca,sentenca_merito,trabalho,TRT9,pjejt,horas_extras,2,nao,0,texto,8137926-31.2023.5.09.0380
+doc_0221.pdf,oficio,oficio_serasa,juizado_especial_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,6533034-49.2025.8.26.0511
+doc_0222.pdf,laudo_pericial,laudo_grafotecnico,estadual_civel,TJSP,esaj,negativacao,3,nao,0,texto,1606683-51.2023.8.26.0108
+doc_0223.pdf,oficio,oficio_resposta,estadual_civel,TJSP,esaj,tarifas,1,sim,2,nenhuma (imagem),1016499-02.2021.8.26.0618
+doc_0224.pdf,certidao,certidao_oficial_neg,juizado_especial_civel,TJPR,projudi,fraude_pix,1,nao,0,texto,4051780-64.2024.8.16.0545
+doc_0225.pdf,oficio,oficio_inss,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,5267584-17.2023.8.26.0355
+doc_0226.pdf,certidao,certidao_publicacao,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,3341654-94.2024.8.26.0681
+doc_0227.pdf,ata_audiencia,ata_instrucao_trab,trabalho,TRT1,pjejt,horas_extras,2,nao,0,texto,0975211-36.2025.5.01.0956
+doc_0228.pdf,mandado,mandado_intimacao,juizado_especial_civel,TJRJ,pje,consignado,1,nao,0,texto,0350612-91.2025.8.19.0419
+doc_0229.pdf,substabelecimento,substabelecimento_com_reserva,estadual_civel,TJMG,pje,consignado,1,sim,1,nenhuma (imagem),3902976-13.2023.8.13.0210
+doc_0230.pdf,embargos_declaracao,embargos_declaracao_sentenca,estadual_civel,TJRJ,pje,revisional,1,nao,0,texto,4191837-52.2021.8.19.0029
+doc_0231.pdf,decisao_interlocutoria,decisao_monocratica_relator,estadual_civel,TJSP,esaj,consignado,1,nao,0,texto,6869760-90.2022.8.26.0304
+doc_0232.pdf,certidao,certidao_publicacao,juizado_especial_civel,TJPR,projudi,tarifas,1,sim,1,nenhuma (imagem),5006637-80.2023.8.16.0412
+doc_0233.pdf,embargos_declaracao,embargos_declaracao_sentenca,trabalho,TRT1,nenhum,horas_extras,2,sim,1,ocr_com_erros,2983029-71.2024.5.01.0913
+doc_0234.pdf,certidao,certidao_remessa,estadual_civel,TJSP,esaj,negativacao,1,nao,0,texto,9054645-57.2023.8.26.0245
+doc_0235.pdf,embargos_declaracao,embargos_declaracao_sentenca,estadual_civel,TJRJ,pje,consignado,1,nao,0,texto,0501421-37.2022.8.19.0116
+doc_0236.pdf,peticao_inicial,peticao_inicial_jec,juizado_especial_civel,TJMG,pje,fraude_pix,4,sim,1,nenhuma (imagem),3030503-88.2021.8.13.0515
+doc_0237.pdf,mandado,mandado_intimacao,juizado_especial_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,0067115-93.2023.8.26.0499
+doc_0238.pdf,ata_audiencia,ata_instrucao_trab,trabalho,TRT3,pjejt,horas_extras,1,nao,0,texto,8586650-46.2022.5.03.0010
+doc_0239.pdf,decisao_interlocutoria,decisao_sisbajud,trabalho,TRT1,pjejt,equiparacao,1,nao,0,texto,8853899-38.2023.5.01.0887
+doc_0240.pdf,procuracao,procuracao_pf,juizado_especial_civel,TJRJ,pje,fraude_pix,1,sim,1,nenhuma (imagem),9728673-27.2022.8.19.0616
+doc_0241.pdf,despacho,despacho,juizado_especial_civel,TJRJ,pje,fraude_pix,1,nao,0,texto,1576067-15.2024.8.19.0412
+doc_0242.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJMG,pje,consignado,3,nao,0,texto,8307771-66.2023.8.13.0520
+doc_0243.pdf,recurso_apelacao,apelacao,estadual_civel,TJPR,projudi,consignado,4,nao,0,texto,8185669-40.2022.8.16.0311
+doc_0244.pdf,decisao_interlocutoria,decisao_tutela,estadual_civel,TJSP,nenhum,revisional,1,sim,1,nenhuma (imagem),3523789-13.2021.8.26.0412
+doc_0245.pdf,replica,replica,estadual_civel,TJSP,esaj,revisional,2,nao,0,texto,7714217-69.2022.8.26.0145
+doc_0246.pdf,mandado,mandado_penhora,juizado_especial_civel,TJSP,esaj,negativacao,1,nao,0,texto,1284589-80.2022.8.26.0024
+doc_0247.pdf,despacho,despacho,estadual_civel,TJSP,esaj,fraude_pix,1,nao,0,texto,6559343-96.2024.8.26.0332
+doc_0248.pdf,contestacao,contestacao,estadual_civel,TJMG,pje,tarifas,2,nao,0,texto,7653772-42.2021.8.13.0417
+doc_0249.pdf,procuracao,procuracao_pf,trabalho,TRT9,pjejt,equiparacao,1,sim,2,nenhuma (imagem),2836274-32.2022.5.09.0685
+doc_0250.pdf,acordao,acordao_trt,trabalho,TRT15,pjejt,horas_extras,2,nao,0,texto,5151517-40.2024.5.15.0112
+doc_0251.pdf,procuracao,procuracao_pf,estadual_civel,TJSP,nenhum,fraude_pix,1,sim,1,ocr_com_erros,3778832-07.2025.8.26.0445
+doc_0252.pdf,certidao,certidao_decurso,estadual_civel,TJSP,esaj,tarifas,1,nao,0,texto,7635590-96.2022.8.26.0421
+doc_0253.pdf,procuracao,procuracao_com_declaracao,estadual_civel,TJMG,pje,negativacao,2,sim,2,nenhuma (imagem),6830722-75.2024.8.13.0009
+doc_0254.pdf,sentenca,sentenca_merito,juizado_especial_civel,TJMG,pje,negativacao,2,nao,0,texto,5199524-15.2021.8.13.0390
+doc_0255.pdf,replica,replica,estadual_civel,TJSP,esaj,consignado,2,nao,0,texto,2081899-65.2023.8.26.0006
+doc_0256.pdf,contrarrazoes,contrarrazoes_apelacao,estadual_civel,TJSP,esaj,fraude_pix,3,nao,0,texto,7380573-97.2025.8.26.0342

@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+cache_texto/
+anexos_juridicos_teste.zip
+.DS_Store

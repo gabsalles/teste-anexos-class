@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 430" width="860" height="430" role="img" aria-label="Como o Jev decide: probabilidades por classe e confiança">
+<title>Como o Jev decide: probabilidades por classe e confiança</title>
+<style>
+  .bg{fill:#fcfcfb} .borda{stroke:rgba(11,11,11,.10);fill:none}
+  .t1{fill:#0b0b0b} .t2{fill:#52514e} .mut{fill:#898781}
+  .grid{stroke:#e1e0d9;stroke-width:1} .base{stroke:#c3c2b7;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .gap{stroke:#fcfcfb;stroke-width:2}
+  .s1s{stroke:#2a78d6} .s2s{stroke:#eb6834} .no{fill:#fcfcfb;stroke:#c3c2b7}
+  text{font-family:system-ui, -apple-system, "Segoe UI", sans-serif}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .borda{stroke:rgba(255,255,255,.10)}
+    .t1{fill:#f0efec} .t2{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a} .base{stroke:#383835}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .gap{stroke:#1a1a19}
+    .s1s{stroke:#3987e5} .s2s{stroke:#d95926} .no{fill:#1a1a19;stroke:#383835}
+  }
+
+      .doc{fill:#f3f2ee;stroke:#c3c2b7} .mono{font-family:ui-monospace,Menlo,monospace}
+      .scan{fill:#2a78d6} .cinza{fill:#c3c2b7} .trilho{fill:#e1e0d9}
+      .ok{stroke:#006300;fill:none} .okt{fill:#006300} .rev{stroke:#eb6834;fill:none} .revt{fill:#b5461b}
+      .anim{transform-box:fill-box;transform-origin:left center;animation-duration:16s;
+             animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+      @media (prefers-color-scheme: dark){
+        .doc{fill:#242423;stroke:#383835} .scan{fill:#3987e5} .cinza{fill:#52514e}
+        .trilho{fill:#2c2c2a} .ok{stroke:#0ca30c} .okt{fill:#0ca30c} .rev{stroke:#d95926} .revt{fill:#e8814f}
+      }
+      @media (prefers-reduced-motion: reduce){.anim{animation:none}}
+    
+@keyframes k1{0%{opacity:1} 48%{opacity:1} 49%{opacity:0} 100%{opacity:0}} .k1{animation-name:k1;opacity:1}
+@keyframes k2{0%{opacity:0} 50%{opacity:0} 51%{opacity:1} 98%{opacity:1} 99%{opacity:0} 100%{opacity:0}} .k2{animation-name:k2;opacity:0}
+@keyframes k3{0%{transform:translateY(0);opacity:0} 1%{opacity:.2} 12%{transform:translateY(248px);opacity:.2} 13%{transform:translateY(248px);opacity:0} 50%{transform:translateY(0);opacity:0} 51%{opacity:.2} 62%{transform:translateY(248px);opacity:.2} 63%{transform:translateY(248px);opacity:0} 100%{opacity:0}} .k3{animation-name:k3;opacity:0}
+@keyframes k4{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k4{animation-name:k4;transform:scaleX(0)}
+@keyframes k5{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.8600)} 46%{transform:scaleX(0.8600)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k5{animation-name:k5;transform:scaleX(0.8600)}
+@keyframes k6{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k6{animation-name:k6;opacity:1}
+@keyframes k7{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k7{animation-name:k7;opacity:0}
+@keyframes k8{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k8{animation-name:k8;transform:scaleX(0)}
+@keyframes k9{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.1400)} 46%{transform:scaleX(0.1400)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k9{animation-name:k9;transform:scaleX(0.1400)}
+@keyframes k10{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k10{animation-name:k10;opacity:1}
+@keyframes k11{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k11{animation-name:k11;opacity:0}
+@keyframes k12{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k12{animation-name:k12;transform:scaleX(0)}
+@keyframes k13{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(1.0000)} 96%{transform:scaleX(1.0000)} 99.99%{transform:scaleX(0)}} .k13{animation-name:k13;transform:scaleX(0.0001)}
+@keyframes k14{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k14{animation-name:k14;opacity:1}
+@keyframes k15{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k15{animation-name:k15;opacity:0}
+@keyframes k16{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k16{animation-name:k16;transform:scaleX(0)}
+@keyframes k17{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k17{animation-name:k17;transform:scaleX(0.0001)}
+@keyframes k18{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k18{animation-name:k18;opacity:1}
+@keyframes k19{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k19{animation-name:k19;opacity:0}
+@keyframes k20{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k20{animation-name:k20;transform:scaleX(0)}
+@keyframes k21{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k21{animation-name:k21;transform:scaleX(0.0001)}
+@keyframes k22{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k22{animation-name:k22;opacity:1}
+@keyframes k23{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k23{animation-name:k23;opacity:0}
+@keyframes k24{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k24{animation-name:k24;transform:scaleX(0)}
+@keyframes k25{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k25{animation-name:k25;transform:scaleX(0.0001)}
+@keyframes k26{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k26{animation-name:k26;opacity:1}
+@keyframes k27{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k27{animation-name:k27;opacity:0}
+@keyframes k28{0%{transform:scaleX(0)} 25%{transform:scaleX(0)} 30%{transform:scaleX(0.850)} 46%{transform:scaleX(0.850)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 75%{transform:scaleX(0)} 80%{transform:scaleX(1.000)} 96%{transform:scaleX(1.000)} 99.99%{transform:scaleX(0)}} .k28{animation-name:k28;transform:scaleX(0.850)}
+@keyframes k29{0%{opacity:0} 30%{opacity:0} 31%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k29{animation-name:k29;opacity:1}
+@keyframes k30{0%{opacity:0} 80%{opacity:0} 81%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k30{animation-name:k30;opacity:0}</style>
+<rect class="bg" x="0" y="0" width="860" height="430" rx="12"/>
+<rect class="borda" x=".5" y=".5" width="859" height="429" rx="12"/>
+<text x="24.0" y="34.0" class="t1" font-size="16" text-anchor="start" font-weight="600">Como o Jev decide</text>
+<text x="24.0" y="54.0" class="t2" font-size="12" text-anchor="start" font-weight="400">Antes de ler, as 22 opções têm chance igual (4,5%). Depois, a probabilidade se concentra e a confiança decide o destino.</text>
+<rect class="doc" x="24" y="78" width="300" height="318" rx="8"/>
+<g class="anim k1"><text x="38.0" y="102.0" class="t1" font-size="12" text-anchor="start" font-weight="600">doc_0023</text><text x="38.0" y="118.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: despacho · lido por OCR, com erros</text><text x="38" y="146" class="t2 mono" font-size="11">PODER JUDICIARIO</text><text x="38" y="164" class="t2 mono" font-size="11">TRIBUNAL DE JUSTIÇA DO ESTADÓ DO RIO DE…</text><text x="38" y="182" class="t2 mono" font-size="11">3° Vara Civel da Comarca de Naeról</text><text x="38" y="200" class="t2 mono" font-size="11">Autos do processo n° 1087792-59.2022.8.…</text><text x="38" y="218" class="t2 mono" font-size="11">Fls. 209: ciência à parte contrária.</text><text x="38" y="236" class="t2 mono" font-size="11">Intimem-se.</text><text x="38" y="254" class="t2 mono" font-size="11">Niterói/FJ. 27:05/2024.</text><text x="38" y="272" class="t2 mono" font-size="11">Antônio Valdir Alves Souza</text><text x="38" y="290" class="t2 mono" font-size="11">Juiz de Direito</text><text x="38" y="308" class="t2 mono" font-size="11">arado detroncamente or. ANTONO VALDIR A…</text><text x="38" y="326" class="t2 mono" font-size="11">pl: 9r, pie pus br 443 o Procesea Consu…</text><text x="38" y="344" class="t2 mono" font-size="11">Mimera do documerio: 2405273:1390172339…</text><text x="38" y="362" class="t2 mono" font-size="11">Num 713148355 Pag 1</text></g>
+<g class="anim k2"><text x="38.0" y="102.0" class="t1" font-size="12" text-anchor="start" font-weight="600">doc_0028</text><text x="38.0" y="118.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: sentença · texto do PDF</text><text x="38" y="146" class="t2 mono" font-size="11">Processo nº:</text><text x="38" y="164" class="t2 mono" font-size="11">0116915-54.2024.8.16.0040</text><text x="38" y="182" class="t2 mono" font-size="11">Classe:</text><text x="38" y="200" class="t2 mono" font-size="11">Procedimento do Juizado Especial Cível</text><text x="38" y="218" class="t2 mono" font-size="11">Assunto:</text><text x="38" y="236" class="t2 mono" font-size="11">Tarifas Bancárias - Cesta de serviços</text><text x="38" y="254" class="t2 mono" font-size="11">AUTOR:</text><text x="38" y="272" class="t2 mono" font-size="11">EDUARDO RODRIGUES SILVA</text><text x="38" y="290" class="t2 mono" font-size="11">RÉU:</text><text x="38" y="308" class="t2 mono" font-size="11">BANCO MERIDIONAL S.A.</text><text x="38" y="326" class="t2 mono" font-size="11">SENTENÇA</text><text x="38" y="344" class="t2 mono" font-size="11">Vistos.</text><text x="38" y="362" class="t2 mono" font-size="11">As partes noticiaram a celebração de ac…</text></g>
+<rect class="scan anim k3" x="30" y="130" width="288" height="18" rx="3"/>
+<path class="fio base" d="M330,228 L354,228" stroke-width="2"/>
+<rect class="no" x="354" y="206" width="72" height="44" rx="10"/>
+<text x="390.0" y="233.0" class="t1" font-size="15" text-anchor="middle" font-weight="700">Jev</text>
+<path class="fio base" d="M426,228 L450,228" stroke-width="2"/>
+<text x="440.0" y="86.0" class="mut" font-size="11" text-anchor="start" font-weight="400">probabilidade por classe</text>
+<text x="440.0" y="107.0" class="t1" font-size="12" text-anchor="start" font-weight="500">despacho</text>
+<rect class="trilho" x="600" y="96" width="190" height="14" rx="3"/>
+<rect class="cinza anim k4" x="600" y="96" width="190" height="14" rx="3"/>
+<rect class="s1 anim k5" x="600" y="96" width="190" height="14" rx="3"/>
+<g class="anim k6"><text x="800.0" y="107.0" class="t1" font-size="12" text-anchor="start" font-weight="600">86%</text></g>
+<g class="anim k7"><text x="800.0" y="107.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<text x="440.0" y="141.0" class="t1" font-size="12" text-anchor="start" font-weight="500">certidão</text>
+<rect class="trilho" x="600" y="130" width="190" height="14" rx="3"/>
+<rect class="cinza anim k8" x="600" y="130" width="190" height="14" rx="3"/>
+<rect class="s2 anim k9" x="600" y="130" width="190" height="14" rx="3"/>
+<g class="anim k10"><text x="800.0" y="141.0" class="t1" font-size="12" text-anchor="start" font-weight="600">14%</text></g>
+<g class="anim k11"><text x="800.0" y="141.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<text x="440.0" y="175.0" class="t1" font-size="12" text-anchor="start" font-weight="500">sentença</text>
+<rect class="trilho" x="600" y="164" width="190" height="14" rx="3"/>
+<rect class="cinza anim k12" x="600" y="164" width="190" height="14" rx="3"/>
+<rect class="s1 anim k13" x="600" y="164" width="190" height="14" rx="3"/>
+<g class="anim k14"><text x="800.0" y="175.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k15"><text x="800.0" y="175.0" class="t1" font-size="12" text-anchor="start" font-weight="600">100%</text></g>
+<text x="440.0" y="209.0" class="t1" font-size="12" text-anchor="start" font-weight="500">decisão interlocutória</text>
+<rect class="trilho" x="600" y="198" width="190" height="14" rx="3"/>
+<rect class="cinza anim k16" x="600" y="198" width="190" height="14" rx="3"/>
+<rect class="s2 anim k17" x="600" y="198" width="190" height="14" rx="3"/>
+<g class="anim k18"><text x="800.0" y="209.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k19"><text x="800.0" y="209.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<text x="440.0" y="243.0" class="t1" font-size="12" text-anchor="start" font-weight="500">ata de audiência</text>
+<rect class="trilho" x="600" y="232" width="190" height="14" rx="3"/>
+<rect class="cinza anim k20" x="600" y="232" width="190" height="14" rx="3"/>
+<rect class="s2 anim k21" x="600" y="232" width="190" height="14" rx="3"/>
+<g class="anim k22"><text x="800.0" y="243.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k23"><text x="800.0" y="243.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<text x="440.0" y="277.0" class="t1" font-size="12" text-anchor="start" font-weight="500">termo de acordo</text>
+<rect class="trilho" x="600" y="266" width="190" height="14" rx="3"/>
+<rect class="cinza anim k24" x="600" y="266" width="190" height="14" rx="3"/>
+<rect class="s2 anim k25" x="600" y="266" width="190" height="14" rx="3"/>
+<g class="anim k26"><text x="800.0" y="277.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k27"><text x="800.0" y="277.0" class="mut" font-size="12" text-anchor="start" font-weight="400">0%</text></g>
+<text x="440.0" y="302.0" class="mut" font-size="11" text-anchor="start" font-weight="400">+ 16 outras opções: 0% nos dois documentos</text>
+<text x="440.0" y="342.0" class="t1" font-size="12" text-anchor="start" font-weight="500">confiança</text>
+<rect class="trilho" x="600" y="332" width="190" height="12" rx="3"/>
+<rect class="s1 anim k28" x="600" y="332" width="190" height="12" rx="3"/>
+<line class="base" x1="780.5" y1="326" x2="780.5" y2="350" stroke-width="2"/>
+<text x="780.5" y="364.0" class="mut" font-size="10" text-anchor="middle" font-weight="400">corte 0,95</text>
+<g class="anim k29"><text x="800.0" y="342.0" class="t1" font-size="12" text-anchor="start" font-weight="600">0,85</text><rect class="rev" x="440" y="374" width="350" height="30" rx="15" stroke-width="1.5"/><text x="456.0" y="394.0" class="revt" font-size="13" text-anchor="start" font-weight="600">!  despacho · vai para revisão humana</text></g>
+<g class="anim k30"><text x="800.0" y="342.0" class="t1" font-size="12" text-anchor="start" font-weight="600">1,00</text><rect class="ok" x="440" y="374" width="350" height="30" rx="15" stroke-width="1.5"/><text x="456.0" y="394.0" class="okt" font-size="13" text-anchor="start" font-weight="600">✓  sentença · classificado automaticamente</text></g>
+</svg>
