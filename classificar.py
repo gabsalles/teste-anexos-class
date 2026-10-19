@@ -115,9 +115,9 @@ def percentil(valores: list[float], p: float) -> float:
     return ordenados[min(len(ordenados) - 1, round(p / 100 * (len(ordenados) - 1)))]
 
 
-def resumir(registros: list[dict], meta: dict) -> dict:
+def resumir(registros: list[dict], meta: dict, campo_latencia: str = "t_jev_s") -> dict:
     ok = [r for r in registros if r["classe"] is not None]
-    lat = [r["t_jev_s"] for r in ok]
+    lat = [r[campo_latencia] for r in ok]
     ext = [r["t_extracao_s"] for r in registros]
     custo = sum(r["custo_usd"] for r in ok)
     resumo = {
@@ -134,7 +134,7 @@ def resumir(registros: list[dict], meta: dict) -> dict:
         "custo_usd_por_doc": round(custo / len(ok), 8) if ok else None,
         "custo_usd_por_1000_docs": round(1000 * custo / len(ok), 4) if ok else None,
         "t_extracao_s": {"total": round(sum(ext), 2), "media": round(statistics.mean(ext), 3) if ext else None},
-        "t_jev_s": {
+        campo_latencia: {
             "media": round(statistics.mean(lat), 3) if lat else None,
             "p50": percentil(lat, 50),
             "p95": percentil(lat, 95),

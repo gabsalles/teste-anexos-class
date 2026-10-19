@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-label="Confiança do Jev versus da Microsoft por anexo">
+<title>Confiança do Jev versus da Microsoft por anexo</title>
+<style>
+  .bg{fill:#fcfcfb} .borda{stroke:rgba(11,11,11,.10);fill:none}
+  .t1{fill:#0b0b0b} .t2{fill:#52514e} .mut{fill:#898781}
+  .grid{stroke:#e1e0d9;stroke-width:1} .base{stroke:#c3c2b7;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .gap{stroke:#fcfcfb;stroke-width:2}
+  .s1s{stroke:#2a78d6} .s2s{stroke:#eb6834} .no{fill:#fcfcfb;stroke:#c3c2b7}
+  text{font-family:system-ui, -apple-system, "Segoe UI", sans-serif}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .borda{stroke:rgba(255,255,255,.10)}
+    .t1{fill:#f0efec} .t2{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a} .base{stroke:#383835}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .gap{stroke:#1a1a19}
+    .s1s{stroke:#3987e5} .s2s{stroke:#d95926} .no{fill:#1a1a19;stroke:#383835}
+  }
+
+  .trilho{fill:#e1e0d9} .ponto{fill:#52514e;fill-opacity:.55;stroke:#fcfcfb;stroke-width:1}
+  .ref{stroke:#c3c2b7;stroke-dasharray:4 4;fill:none}
+  @media (prefers-color-scheme: dark){
+    .trilho{fill:#2c2c2a} .ponto{fill:#c3c2b7;stroke:#1a1a19} .ref{stroke:#383835}
+  }
+</style>
+<rect class="bg" x="0" y="0" width="760" height="520" rx="12"/>
+<rect class="borda" x=".5" y=".5" width="759" height="519" rx="12"/>
+<text x="24.0" y="34.0" class="t1" font-size="16" text-anchor="start" font-weight="600">Onde cada modelo hesitou</text>
+<text x="24.0" y="54.0" class="t2" font-size="12" text-anchor="start" font-weight="400">Cada ponto é um anexo: confiança do Jev (horizontal) × da Microsoft (vertical). Os dois acertaram todos.</text>
+<text x="24.0" y="72.0" class="t2" font-size="12" text-anchor="start" font-weight="400">Correlação entre as incertezas: 0,19. Na maioria dos casos difíceis, só um dos dois teve dúvida.</text>
+<line class="grid" x1="110.0" y1="100" x2="110.0" y2="450"/>
+<line class="grid" x1="110" y1="450.0" x2="700" y2="450.0"/>
+<text x="110.0" y="468.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,85</text>
+<text x="100.0" y="454.0" class="mut" font-size="11" text-anchor="end" font-weight="400">0,85</text>
+<line class="grid" x1="306.7" y1="100" x2="306.7" y2="450"/>
+<line class="grid" x1="110" y1="333.3" x2="700" y2="333.3"/>
+<text x="306.7" y="468.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,90</text>
+<text x="100.0" y="337.3" class="mut" font-size="11" text-anchor="end" font-weight="400">0,90</text>
+<line class="grid" x1="503.3" y1="100" x2="503.3" y2="450"/>
+<line class="grid" x1="110" y1="216.7" x2="700" y2="216.7"/>
+<text x="503.3" y="468.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">0,95</text>
+<text x="100.0" y="220.7" class="mut" font-size="11" text-anchor="end" font-weight="400">0,95</text>
+<line class="grid" x1="700.0" y1="100" x2="700.0" y2="450"/>
+<line class="grid" x1="110" y1="100.0" x2="700" y2="100.0"/>
+<text x="700.0" y="468.0" class="mut" font-size="11" text-anchor="middle" font-weight="400">1,00</text>
+<text x="100.0" y="104.0" class="mut" font-size="11" text-anchor="end" font-weight="400">1,00</text>
+<line class="ref" x1="110.0" y1="450.0" x2="700.0" y2="100.0"/>
+<text x="157.2" y="434.7" class="mut" font-size="10" text-anchor="start" font-weight="400">mesma confiança</text>
+<text x="405.0" y="490.0" class="t1" font-size="12" text-anchor="middle" font-weight="500">confiança do Jev</text>
+<text x="34" y="275.0" class="t1" font-size="12" font-weight="500" text-anchor="middle" transform="rotate(-90 34 275.0)">confiança da Microsoft</text>
+<line class="base" x1="503.3" y1="100" x2="503.3" y2="450" stroke-dasharray="2 3"/>
+<line class="base" x1="110" y1="216.7" x2="700" y2="216.7" stroke-dasharray="2 3"/>
+<text x="509.3" y="442.0" class="mut" font-size="10" text-anchor="start" font-weight="400">corte 0,95</text>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="621.3" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="107.7" r="5"/>
+<circle class="ponto" cx="582.0" cy="102.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="107.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="105.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="125.3" r="5"/>
+<circle class="ponto" cx="188.7" cy="102.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="105.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.4" r="5"/>
+<circle class="ponto" cx="621.3" cy="103.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="295.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.4" r="5"/>
+<circle class="ponto" cx="385.3" cy="104.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="105.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="109.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="542.7" cy="105.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.5" r="5"/>
+<circle class="ponto" cx="660.7" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="621.3" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="106.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="660.7" cy="114.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="346.0" cy="105.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="660.7" cy="112.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="105.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="114.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="660.7" cy="104.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="621.3" cy="103.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="660.7" cy="102.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="126.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.3" r="5"/>
+<circle class="ponto" cx="660.7" cy="112.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="114.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="120.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.5" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.2" r="5"/>
+<circle class="ponto" cx="228.0" cy="175.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="112.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.7" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="115.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.2" r="5"/>
+<circle class="ponto" cx="700.0" cy="104.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.9" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.8" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.0" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.6" r="5"/>
+<circle class="ponto" cx="700.0" cy="103.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.3" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="102.1" r="5"/>
+<circle class="ponto" cx="700.0" cy="101.4" r="5"/>
+<circle class="ponto" cx="700.0" cy="100.3" r="5"/>
+<text x="188.7" y="122.9" class="t2" font-size="11" text-anchor="middle" font-weight="400">doc_0023</text>
+<text x="238.0" y="179.7" class="t2" font-size="11" text-anchor="start" font-weight="400">doc_0231 · decisão interlocutória</text>
+<text x="346.0" y="140.0" class="t2" font-size="11" text-anchor="middle" font-weight="400">doc_0136</text>
+<text x="385.3" y="124.5" class="t2" font-size="11" text-anchor="middle" font-weight="400">doc_0046</text>
+<text x="690.0" y="299.7" class="t2" font-size="11" text-anchor="end" font-weight="400">doc_0041 · despacho</text>
+<text x="688.0" y="151.3" class="t1" font-size="12" text-anchor="end" font-weight="600">243 anexos no canto</text>
+<text x="688.0" y="167.3" class="mut" font-size="11" text-anchor="end" font-weight="400">(os dois com confiança ≥ 0,99)</text>
+<line class="base" x1="110" y1="450" x2="700" y2="450"/>
+</svg>

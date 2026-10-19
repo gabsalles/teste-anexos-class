@@ -1,0 +1,40 @@
+{
+  "run_id": "20261019-103425-a5bc",
+  "rotulo": "microsoft smoke",
+  "inicio": "2026-10-19T13:34:26.857609+00:00",
+  "modelo_solicitado": "microsoft/microsoft-decision-1",
+  "via": "openrouter /api/alpha/decisions",
+  "prompt_hash": "c4ffefc2e54f",
+  "concorrencia": 8,
+  "pasta": "anexos_juridicos_teste/pdfs",
+  "t_fase_extracao_s": 0.0,
+  "t_fase_classificacao_s": 1.84,
+  "t_total_s": 1.85,
+  "docs_por_minuto_classificacao": 325.9,
+  "docs": 10,
+  "docs_ok": 10,
+  "docs_erro": 0,
+  "docs_ocr": 1,
+  "docs_truncados": 0,
+  "modelos": [
+    "microsoft/microsoft-decision-1-20261009"
+  ],
+  "tokens_entrada": 41470,
+  "tokens_saida": 10,
+  "custo_usd_total": 0.001742,
+  "custo_usd_por_doc": 0.00017417,
+  "custo_usd_por_1000_docs": 0.1742,
+  "t_extracao_s": {
+    "total": 1.04,
+    "media": 0.104
+  },
+  "t_modelo_s": {
+    "media": 1.173,
+    "p50": 1.227,
+    "p95": 1.513,
+    "max": 1.513
+  },
+  "confianca_media": 0.999,
+  "acuracia": 1.0,
+  "docs_avaliados": 10
+}

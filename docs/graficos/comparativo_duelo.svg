@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 500" width="860" height="500" role="img" aria-label="Mesmo anexo, dois modelos: Jev e Microsoft-Decision-1">
+<title>Mesmo anexo, dois modelos: Jev e Microsoft-Decision-1</title>
+<style>
+  .bg{fill:#fcfcfb} .borda{stroke:rgba(11,11,11,.10);fill:none}
+  .t1{fill:#0b0b0b} .t2{fill:#52514e} .mut{fill:#898781}
+  .grid{stroke:#e1e0d9;stroke-width:1} .base{stroke:#c3c2b7;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .gap{stroke:#fcfcfb;stroke-width:2}
+  .s1s{stroke:#2a78d6} .s2s{stroke:#eb6834} .no{fill:#fcfcfb;stroke:#c3c2b7}
+  text{font-family:system-ui, -apple-system, "Segoe UI", sans-serif}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .borda{stroke:rgba(255,255,255,.10)}
+    .t1{fill:#f0efec} .t2{fill:#c3c2b7}
+    .grid{stroke:#2c2c2a} .base{stroke:#383835}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .gap{stroke:#1a1a19}
+    .s1s{stroke:#3987e5} .s2s{stroke:#d95926} .no{fill:#1a1a19;stroke:#383835}
+  }
+
+      .doc{fill:#f3f2ee;stroke:#c3c2b7} .mono{font-family:ui-monospace,Menlo,monospace}
+      .scan{fill:#2a78d6} .cinza{fill:#c3c2b7} .trilho{fill:#e1e0d9}
+      .ok{stroke:#006300;fill:none} .okt{fill:#006300} .rev{stroke:#eb6834;fill:none} .revt{fill:#b5461b}
+      .anim{transform-box:fill-box;transform-origin:left center;animation-duration:16s;
+             animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+      @media (prefers-color-scheme: dark){
+        .doc{fill:#242423;stroke:#383835} .scan{fill:#3987e5} .cinza{fill:#52514e}
+        .trilho{fill:#2c2c2a} .ok{stroke:#0ca30c} .okt{fill:#0ca30c} .rev{stroke:#d95926} .revt{fill:#e8814f}
+      }
+      @media (prefers-reduced-motion: reduce){.anim{animation:none}}
+    
+@keyframes k1{0%{opacity:1} 48%{opacity:1} 49%{opacity:0} 100%{opacity:0}} .k1{animation-name:k1;opacity:1}
+@keyframes k2{0%{opacity:0} 50%{opacity:0} 51%{opacity:1} 98%{opacity:1} 99%{opacity:0} 100%{opacity:0}} .k2{animation-name:k2;opacity:0}
+@keyframes k3{0%{transform:translateY(0);opacity:0} 1%{opacity:.2} 12%{transform:translateY(248px);opacity:.2} 13%{transform:translateY(248px);opacity:0} 50%{transform:translateY(0);opacity:0} 51%{opacity:.2} 62%{transform:translateY(248px);opacity:.2} 63%{transform:translateY(248px);opacity:0} 100%{opacity:0}} .k3{animation-name:k3;opacity:0}
+@keyframes k4{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k4{animation-name:k4;transform:scaleX(0)}
+@keyframes k5{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.8800)} 46%{transform:scaleX(0.8800)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(1.0000)} 96%{transform:scaleX(1.0000)} 99.99%{transform:scaleX(0)}} .k5{animation-name:k5;transform:scaleX(0.8800)}
+@keyframes k6{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k6{animation-name:k6;opacity:1}
+@keyframes k7{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k7{animation-name:k7;opacity:0}
+@keyframes k8{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k8{animation-name:k8;transform:scaleX(0)}
+@keyframes k9{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.9988)} 46%{transform:scaleX(0.9988)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.9200)} 96%{transform:scaleX(0.9200)} 99.99%{transform:scaleX(0)}} .k9{animation-name:k9;transform:scaleX(0.9988)}
+@keyframes k10{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k10{animation-name:k10;opacity:1}
+@keyframes k11{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k11{animation-name:k11;opacity:0}
+@keyframes k12{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k12{animation-name:k12;transform:scaleX(0)}
+@keyframes k13{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.1200)} 46%{transform:scaleX(0.1200)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k13{animation-name:k13;transform:scaleX(0.1200)}
+@keyframes k14{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k14{animation-name:k14;opacity:1}
+@keyframes k15{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k15{animation-name:k15;opacity:0}
+@keyframes k16{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k16{animation-name:k16;transform:scaleX(0)}
+@keyframes k17{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0004)} 46%{transform:scaleX(0.0004)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0004)} 96%{transform:scaleX(0.0004)} 99.99%{transform:scaleX(0)}} .k17{animation-name:k17;transform:scaleX(0.0004)}
+@keyframes k18{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k18{animation-name:k18;opacity:1}
+@keyframes k19{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k19{animation-name:k19;opacity:0}
+@keyframes k20{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k20{animation-name:k20;transform:scaleX(0)}
+@keyframes k21{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k21{animation-name:k21;transform:scaleX(0.0001)}
+@keyframes k22{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k22{animation-name:k22;opacity:1}
+@keyframes k23{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k23{animation-name:k23;opacity:0}
+@keyframes k24{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k24{animation-name:k24;transform:scaleX(0)}
+@keyframes k25{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0003)} 46%{transform:scaleX(0.0003)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0588)} 96%{transform:scaleX(0.0588)} 99.99%{transform:scaleX(0)}} .k25{animation-name:k25;transform:scaleX(0.0003)}
+@keyframes k26{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k26{animation-name:k26;opacity:1}
+@keyframes k27{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k27{animation-name:k27;opacity:0}
+@keyframes k28{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k28{animation-name:k28;transform:scaleX(0)}
+@keyframes k29{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k29{animation-name:k29;transform:scaleX(0.0001)}
+@keyframes k30{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k30{animation-name:k30;opacity:1}
+@keyframes k31{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k31{animation-name:k31;opacity:0}
+@keyframes k32{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k32{animation-name:k32;transform:scaleX(0)}
+@keyframes k33{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0116)} 96%{transform:scaleX(0.0116)} 99.99%{transform:scaleX(0)}} .k33{animation-name:k33;transform:scaleX(0.0001)}
+@keyframes k34{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k34{animation-name:k34;opacity:1}
+@keyframes k35{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k35{animation-name:k35;opacity:0}
+@keyframes k36{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k36{animation-name:k36;transform:scaleX(0)}
+@keyframes k37{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0001)} 96%{transform:scaleX(0.0001)} 99.99%{transform:scaleX(0)}} .k37{animation-name:k37;transform:scaleX(0.0001)}
+@keyframes k38{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k38{animation-name:k38;opacity:1}
+@keyframes k39{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k39{animation-name:k39;opacity:0}
+@keyframes k40{0%{transform:scaleX(0.0455)} 12%{transform:scaleX(0.0455)} 25%{transform:scaleX(0)} 46%{transform:scaleX(0)} 50%{transform:scaleX(0.0455)} 50%{transform:scaleX(0.0455)} 62%{transform:scaleX(0.0455)} 75%{transform:scaleX(0)} 96%{transform:scaleX(0)} 99.99%{transform:scaleX(0.0455)}} .k40{animation-name:k40;transform:scaleX(0)}
+@keyframes k41{0%{transform:scaleX(0)} 12%{transform:scaleX(0)} 25%{transform:scaleX(0.0001)} 46%{transform:scaleX(0.0001)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 62%{transform:scaleX(0)} 75%{transform:scaleX(0.0070)} 96%{transform:scaleX(0.0070)} 99.99%{transform:scaleX(0)}} .k41{animation-name:k41;transform:scaleX(0.0001)}
+@keyframes k42{0%{opacity:0} 24%{opacity:0} 25%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k42{animation-name:k42;opacity:1}
+@keyframes k43{0%{opacity:0} 74%{opacity:0} 75%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k43{animation-name:k43;opacity:0}
+@keyframes k44{0%{transform:scaleX(0)} 25%{transform:scaleX(0)} 30%{transform:scaleX(0.870)} 46%{transform:scaleX(0.870)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 75%{transform:scaleX(0)} 80%{transform:scaleX(1.000)} 96%{transform:scaleX(1.000)} 99.99%{transform:scaleX(0)}} .k44{animation-name:k44;transform:scaleX(0.870)}
+@keyframes k45{0%{opacity:0} 30%{opacity:0} 31%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k45{animation-name:k45;opacity:1}
+@keyframes k46{0%{opacity:0} 80%{opacity:0} 81%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k46{animation-name:k46;opacity:0}
+@keyframes k47{0%{transform:scaleX(0)} 25%{transform:scaleX(0)} 30%{transform:scaleX(0.999)} 46%{transform:scaleX(0.999)} 50%{transform:scaleX(0)} 50%{transform:scaleX(0)} 75%{transform:scaleX(0)} 80%{transform:scaleX(0.916)} 96%{transform:scaleX(0.916)} 99.99%{transform:scaleX(0)}} .k47{animation-name:k47;transform:scaleX(0.999)}
+@keyframes k48{0%{opacity:0} 30%{opacity:0} 31%{opacity:1} 46%{opacity:1} 47%{opacity:0} 100%{opacity:0}} .k48{animation-name:k48;opacity:1}
+@keyframes k49{0%{opacity:0} 80%{opacity:0} 81%{opacity:1} 96%{opacity:1} 97%{opacity:0} 100%{opacity:0}} .k49{animation-name:k49;opacity:0}</style>
+<rect class="bg" x="0" y="0" width="860" height="500" rx="12"/>
+<rect class="borda" x=".5" y=".5" width="859" height="499" rx="12"/>
+<text x="24.0" y="34.0" class="t1" font-size="16" text-anchor="start" font-weight="600">Mesmo anexo, dois modelos</text>
+<text x="24.0" y="54.0" class="t2" font-size="12" text-anchor="start" font-weight="400">As 22 opções partem de chance igual. Os dois escolhem a mesma classe, mas hesitam em anexos diferentes.</text>
+<rect class="s1" x="354" y="74" width="12" height="12" rx="3"/>
+<text x="372.0" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">Jev</text>
+<rect class="s2" x="417.6" y="74" width="12" height="12" rx="3"/>
+<text x="435.6" y="84.0" class="t2" font-size="13" text-anchor="start" font-weight="400">Microsoft-Decision-1</text>
+<rect class="doc" x="24" y="78" width="300" height="318" rx="8"/>
+<g class="anim k1"><text x="38.0" y="102.0" class="t1" font-size="12" text-anchor="start" font-weight="600">doc_0023</text><text x="38.0" y="118.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: despacho · lido por OCR, com erros</text><text x="38" y="146" class="t2 mono" font-size="11">PODER JUDICIARIO</text><text x="38" y="164" class="t2 mono" font-size="11">TRIBUNAL DE JUSTIÇA DO ESTADÓ DO RIO DE…</text><text x="38" y="182" class="t2 mono" font-size="11">3° Vara Civel da Comarca de Naeról</text><text x="38" y="200" class="t2 mono" font-size="11">Autos do processo n° 1087792-59.2022.8.…</text><text x="38" y="218" class="t2 mono" font-size="11">Fls. 209: ciência à parte contrária.</text><text x="38" y="236" class="t2 mono" font-size="11">Intimem-se.</text><text x="38" y="254" class="t2 mono" font-size="11">Niterói/FJ. 27:05/2024.</text><text x="38" y="272" class="t2 mono" font-size="11">Antônio Valdir Alves Souza</text><text x="38" y="290" class="t2 mono" font-size="11">Juiz de Direito</text><text x="38" y="308" class="t2 mono" font-size="11">arado detroncamente or. ANTONO VALDIR A…</text><text x="38" y="326" class="t2 mono" font-size="11">pl: 9r, pie pus br 443 o Procesea Consu…</text><text x="38" y="344" class="t2 mono" font-size="11">Mimera do documerio: 2405273:1390172339…</text><text x="38" y="362" class="t2 mono" font-size="11">Num 713148355 Pag 1</text></g>
+<g class="anim k2"><text x="38.0" y="102.0" class="t1" font-size="12" text-anchor="start" font-weight="600">doc_0041</text><text x="38.0" y="118.0" class="mut" font-size="11" text-anchor="start" font-weight="400">gabarito: despacho · texto do PDF</text><text x="38" y="146" class="t2 mono" font-size="11">PROCESSO nº:</text><text x="38" y="164" class="t2 mono" font-size="11">3070417-47.2022.5.01.0245 (ATOrd)</text><text x="38" y="182" class="t2 mono" font-size="11">RECLAMANTE:</text><text x="38" y="200" class="t2 mono" font-size="11">VALDIR TOLEDO MORAES</text><text x="38" y="218" class="t2 mono" font-size="11">RECLAMADO:</text><text x="38" y="236" class="t2 mono" font-size="11">BANCO MERIDIONAL S.A.</text><text x="38" y="254" class="t2 mono" font-size="11">DESPACHO</text><text x="38" y="272" class="t2 mono" font-size="11">Vistos em correição.</text><text x="38" y="290" class="t2 mono" font-size="11">Recebo o recurso ordinário interposto p…</text><text x="38" y="308" class="t2 mono" font-size="11">Intime-se o reclamante para contrarrazõ…</text><text x="38" y="326" class="t2 mono" font-size="11">Tribunal Regional do Trabalho.</text><text x="38" y="344" class="t2 mono" font-size="11">Int.</text><text x="38" y="362" class="t2 mono" font-size="11">Niterói, 22/08/2024.</text></g>
+<rect class="scan anim k3" x="30" y="130" width="288" height="18" rx="3"/>
+<path class="fio base" d="M332,237.0 L348,237.0" stroke-width="2"/>
+<text x="354.0" y="122.0" class="t1" font-size="12" text-anchor="start" font-weight="500">despacho</text>
+<rect class="trilho" x="500" y="108" width="170" height="11" rx="3"/>
+<rect class="cinza anim k4" x="500" y="108" width="170" height="11" rx="3"/>
+<rect class="s1 anim k5" x="500" y="108" width="170" height="11" rx="3"/>
+<g class="anim k6"><text x="680.0" y="118.0" class="t1" font-size="11" text-anchor="start" font-weight="600">88,0%</text></g>
+<g class="anim k7"><text x="680.0" y="118.0" class="t1" font-size="11" text-anchor="start" font-weight="600">100%</text></g>
+<rect class="trilho" x="500" y="124" width="170" height="11" rx="3"/>
+<rect class="cinza anim k8" x="500" y="124" width="170" height="11" rx="3"/>
+<rect class="s2 anim k9" x="500" y="124" width="170" height="11" rx="3"/>
+<g class="anim k10"><text x="680.0" y="134.0" class="t1" font-size="11" text-anchor="start" font-weight="600">99,9%</text></g>
+<g class="anim k11"><text x="680.0" y="134.0" class="t1" font-size="11" text-anchor="start" font-weight="600">92,0%</text></g>
+<text x="354.0" y="168.0" class="t1" font-size="12" text-anchor="start" font-weight="500">certidão</text>
+<rect class="trilho" x="500" y="154" width="170" height="11" rx="3"/>
+<rect class="cinza anim k12" x="500" y="154" width="170" height="11" rx="3"/>
+<rect class="s1 anim k13" x="500" y="154" width="170" height="11" rx="3"/>
+<g class="anim k14"><text x="680.0" y="164.0" class="t1" font-size="11" text-anchor="start" font-weight="600">12,0%</text></g>
+<g class="anim k15"><text x="680.0" y="164.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<rect class="trilho" x="500" y="170" width="170" height="11" rx="3"/>
+<rect class="cinza anim k16" x="500" y="170" width="170" height="11" rx="3"/>
+<rect class="s2 anim k17" x="500" y="170" width="170" height="11" rx="3"/>
+<g class="anim k18"><text x="680.0" y="180.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k19"><text x="680.0" y="180.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<text x="354.0" y="214.0" class="t1" font-size="12" text-anchor="start" font-weight="500">decisão interlocutória</text>
+<rect class="trilho" x="500" y="200" width="170" height="11" rx="3"/>
+<rect class="cinza anim k20" x="500" y="200" width="170" height="11" rx="3"/>
+<rect class="s1 anim k21" x="500" y="200" width="170" height="11" rx="3"/>
+<g class="anim k22"><text x="680.0" y="210.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k23"><text x="680.0" y="210.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<rect class="trilho" x="500" y="216" width="170" height="11" rx="3"/>
+<rect class="cinza anim k24" x="500" y="216" width="170" height="11" rx="3"/>
+<rect class="s2 anim k25" x="500" y="216" width="170" height="11" rx="3"/>
+<g class="anim k26"><text x="680.0" y="226.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k27"><text x="680.0" y="226.0" class="t1" font-size="11" text-anchor="start" font-weight="600">5,9%</text></g>
+<text x="354.0" y="260.0" class="t1" font-size="12" text-anchor="start" font-weight="500">recurso de apelação</text>
+<rect class="trilho" x="500" y="246" width="170" height="11" rx="3"/>
+<rect class="cinza anim k28" x="500" y="246" width="170" height="11" rx="3"/>
+<rect class="s1 anim k29" x="500" y="246" width="170" height="11" rx="3"/>
+<g class="anim k30"><text x="680.0" y="256.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k31"><text x="680.0" y="256.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<rect class="trilho" x="500" y="262" width="170" height="11" rx="3"/>
+<rect class="cinza anim k32" x="500" y="262" width="170" height="11" rx="3"/>
+<rect class="s2 anim k33" x="500" y="262" width="170" height="11" rx="3"/>
+<g class="anim k34"><text x="680.0" y="272.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k35"><text x="680.0" y="272.0" class="t1" font-size="11" text-anchor="start" font-weight="600">1,2%</text></g>
+<text x="354.0" y="306.0" class="t1" font-size="12" text-anchor="start" font-weight="500">acórdão</text>
+<rect class="trilho" x="500" y="292" width="170" height="11" rx="3"/>
+<rect class="cinza anim k36" x="500" y="292" width="170" height="11" rx="3"/>
+<rect class="s1 anim k37" x="500" y="292" width="170" height="11" rx="3"/>
+<g class="anim k38"><text x="680.0" y="302.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k39"><text x="680.0" y="302.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<rect class="trilho" x="500" y="308" width="170" height="11" rx="3"/>
+<rect class="cinza anim k40" x="500" y="308" width="170" height="11" rx="3"/>
+<rect class="s2 anim k41" x="500" y="308" width="170" height="11" rx="3"/>
+<g class="anim k42"><text x="680.0" y="318.0" class="mut" font-size="11" text-anchor="start" font-weight="400">0%</text></g>
+<g class="anim k43"><text x="680.0" y="318.0" class="t1" font-size="11" text-anchor="start" font-weight="600">0,7%</text></g>
+<text x="354.0" y="338.0" class="mut" font-size="11" text-anchor="start" font-weight="400">+ 17 outras opções com menos de 0,5% nos dois modelos</text>
+<text x="354.0" y="373.0" class="t1" font-size="12" text-anchor="start" font-weight="500">confiança Jev</text>
+<rect class="trilho" x="500" y="363" width="170" height="12" rx="3"/>
+<rect class="s1 anim k44" x="500" y="363" width="170" height="12" rx="3"/>
+<line class="base" x1="661.5" y1="359" x2="661.5" y2="379" stroke-width="2"/>
+<g class="anim k45"><text x="680.0" y="373.0" class="t1" font-size="12" text-anchor="start" font-weight="600">0,87</text><text x="722.0" y="373.0" class="revt" font-size="12" text-anchor="start" font-weight="600">! revisão humana</text></g>
+<g class="anim k46"><text x="680.0" y="373.0" class="t1" font-size="12" text-anchor="start" font-weight="600">1,00</text><text x="722.0" y="373.0" class="okt" font-size="12" text-anchor="start" font-weight="600">✓ automático</text></g>
+<text x="354.0" y="407.0" class="t1" font-size="12" text-anchor="start" font-weight="500">confiança Microsoft</text>
+<rect class="trilho" x="500" y="397" width="170" height="12" rx="3"/>
+<rect class="s2 anim k47" x="500" y="397" width="170" height="12" rx="3"/>
+<line class="base" x1="661.5" y1="393" x2="661.5" y2="413" stroke-width="2"/>
+<g class="anim k48"><text x="680.0" y="407.0" class="t1" font-size="12" text-anchor="start" font-weight="600">1,00</text><text x="722.0" y="407.0" class="okt" font-size="12" text-anchor="start" font-weight="600">✓ automático</text></g>
+<g class="anim k49"><text x="680.0" y="407.0" class="t1" font-size="12" text-anchor="start" font-weight="600">0,92</text><text x="722.0" y="407.0" class="revt" font-size="12" text-anchor="start" font-weight="600">! revisão humana</text></g>
+<text x="661.5" y="444.0" class="mut" font-size="10" text-anchor="middle" font-weight="400">corte 0,95</text>
+</svg>

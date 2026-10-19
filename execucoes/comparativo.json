@@ -1,0 +1,112 @@
+{
+  "docs": 256,
+  "modelos": {
+    "jev": {
+      "run_id": "20261019-103510-252f",
+      "modelo": [
+        "jev-1.13.0"
+      ],
+      "acesso": "API da TypeSafe, direto",
+      "acertos": 256,
+      "erros_api": 0,
+      "confianca_media": 0.9975,
+      "confianca_min": 0.87,
+      "docs_conf_abaixo_095": 4,
+      "docs_conf_abaixo_099": 10,
+      "latencia_s": {
+        "media": 0.301,
+        "p50": 0.301,
+        "p95": 0.347,
+        "max": 0.547
+      },
+      "docs_por_minuto": 1562.9,
+      "tokens_media": 5225,
+      "prompt_fixo_tokens": 4182,
+      "custo_usd_total": 0.056178,
+      "custo_usd_por_1000_docs": 0.2194,
+      "custo_usd_mes": {
+        "100000": 21.94,
+        "300000": 65.83,
+        "1000000": 219.44
+      },
+      "menor_confianca": [
+        [
+          "doc_0023.pdf",
+          0.87
+        ],
+        [
+          "doc_0231.pdf",
+          0.88
+        ],
+        [
+          "doc_0136.pdf",
+          0.91
+        ],
+        [
+          "doc_0046.pdf",
+          0.92
+        ],
+        [
+          "doc_0083.pdf",
+          0.96
+        ]
+      ]
+    },
+    "microsoft": {
+      "run_id": "20261019-103438-79a9",
+      "modelo": [
+        "microsoft/microsoft-decision-1-20261009"
+      ],
+      "acesso": "OpenRouter → Azure",
+      "acertos": 256,
+      "erros_api": 0,
+      "confianca_media": 0.9985,
+      "confianca_min": 0.916,
+      "docs_conf_abaixo_095": 1,
+      "docs_conf_abaixo_099": 4,
+      "latencia_s": {
+        "media": 0.59,
+        "p50": 0.556,
+        "p95": 0.686,
+        "max": 2.042
+      },
+      "docs_por_minuto": 802.2,
+      "tokens_media": 3886,
+      "prompt_fixo_tokens": 2895,
+      "custo_usd_total": 0.041785,
+      "custo_usd_por_1000_docs": 0.1632,
+      "custo_usd_mes": {
+        "100000": 16.32,
+        "300000": 48.97,
+        "1000000": 163.22
+      },
+      "menor_confianca": [
+        [
+          "doc_0041.pdf",
+          0.916
+        ],
+        [
+          "doc_0231.pdf",
+          0.968
+        ],
+        [
+          "doc_0188.pdf",
+          0.989
+        ],
+        [
+          "doc_0022.pdf",
+          0.989
+        ],
+        [
+          "doc_0226.pdf",
+          0.991
+        ]
+      ]
+    }
+  },
+  "divergencias": [],
+  "correlacao_incerteza": 0.192,
+  "ambos_conf_099": 243,
+  "razao_tokens_microsoft_jev": 0.744,
+  "aviso_latencia": "A latência da Microsoft foi medida pelo OpenRouter, que fica entre o script e a Azure; a do Jev foi medida na API da TypeSafe, direto. A diferença de tempo pode vir em parte desse caminho extra e não deve ser lida como tempo do modelo. Chamar a Microsoft direto na Azure (<recurso>/providers/microsoft/v1/systemone) daria a comparação justa."
+}

@@ -89,6 +89,9 @@ NOMES = {
     "certidao": "certidão", "decisao_interlocutoria": "decisão interlocutória", "despacho": "despacho",
     "agravo_instrumento": "agravo de instrumento", "procuracao": "procuração", "oficio": "ofício",
     "ata_audiencia": "ata de audiência", "calculos_liquidacao": "cálculos", "sentenca": "sentença", "termo_acordo": "termo de acordo",
+    "recurso_apelacao": "recurso de apelação", "acordao": "acórdão", "peticao_inicial": "petição inicial",
+    "contestacao": "contestação", "replica": "réplica", "contrarrazoes": "contrarrazões",
+    "embargos_declaracao": "embargos de declaração", "alvara": "alvará", "laudo_pericial": "laudo pericial",
 }
 
 
@@ -307,6 +310,63 @@ def _trecho(arquivo: str, n_linhas=13, largura=40) -> list[str]:
     return [l.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;") for l in saida]
 
 
+def css_animado(T: int) -> str:
+    """CSS base das animações: cartão do documento, trilhos, linha de leitura e selos."""
+    return f"""
+      .doc{{fill:#f3f2ee;stroke:#c3c2b7}} .mono{{font-family:ui-monospace,Menlo,monospace}}
+      .scan{{fill:#2a78d6}} .cinza{{fill:#c3c2b7}} .trilho{{fill:#e1e0d9}}
+      .ok{{stroke:#006300;fill:none}} .okt{{fill:#006300}} .rev{{stroke:#eb6834;fill:none}} .revt{{fill:#b5461b}}
+      .anim{{transform-box:fill-box;transform-origin:left center;animation-duration:{T}s;
+             animation-iteration-count:infinite;animation-timing-function:ease-in-out}}
+      @media (prefers-color-scheme: dark){{
+        .doc{{fill:#242423;stroke:#383835}} .scan{{fill:#3987e5}} .cinza{{fill:#52514e}}
+        .trilho{{fill:#2c2c2a}} .ok{{stroke:#0ca30c}} .okt{{fill:#0ca30c}} .rev{{stroke:#d95926}} .revt{{fill:#e8814f}}
+      }}
+      @media (prefers-reduced-motion: reduce){{.anim{{animation:none}}}}
+    """
+
+
+class Animacao:
+    """Keyframes CSS para animações em loop de dois documentos (cada um ocupa metade do ciclo).
+
+    Os SVGs animados usam CSS (e não SMIL) para respeitar `prefers-reduced-motion`; o estado
+    estático de cada elemento (`padrao`) é o fim da fase do primeiro documento.
+    """
+
+    def __init__(self, css: list[str]):
+        self.css = css
+        self.n = 0
+
+    def anima(self, propriedade_por_fase, padrao):
+        """Cria keyframes para um elemento. propriedade_por_fase: lista de (percentual, css)."""
+        self.n += 1
+        nome = f"k{self.n}"
+        quadros = " ".join(f"{p}%{{{v}}}" for p, v in propriedade_por_fase)
+        self.css.append(f"@keyframes {nome}{{{quadros}}} .{nome}{{animation-name:{nome};{padrao}}}")
+        return nome
+
+    @staticmethod
+    def fases(valor_inicio, valor_fim_por_doc, chegada=(12, 25), saida=(46, 50)):
+        """Gera quadros para os dois documentos: começa em valor_inicio, vai ao valor final
+        do documento entre `chegada`, segura e volta ao início entre `saida`."""
+        quadros = []
+        for i, fim in enumerate(valor_fim_por_doc):
+            o = 50 * i
+            quadros += [(o, valor_inicio), (o + chegada[0], valor_inicio), (o + chegada[1], fim),
+                        (o + saida[0], fim), (o + saida[1] - (0.01 if i else 0), valor_inicio)]
+        return quadros
+
+    @staticmethod
+    def visivel_na_fase(i, de=0, ate=49):
+        """Opacidade 1 só durante a fase do documento i (entre `de` e `ate` % da fase)."""
+        o = 50 * i
+        q = [(0, "opacity:0"), (100, "opacity:0")]
+        q += [(o + de, "opacity:0"), (o + de + 1, "opacity:1"), (o + ate - 1, "opacity:1"), (o + ate, "opacity:0")]
+        if i == 0 and de == 0:  # o primeiro documento já aparece no quadro inicial
+            q = [(0, "opacity:1")] + [x for x in q if x[0] != 0 and x[0] != 1]
+        return sorted(set(q), key=lambda x: x[0])
+
+
 def grafico_jev(registros, arquivos=("doc_0023.pdf", "doc_0028.pdf"), corte=0.95) -> str:
     """Animação em loop: para cada documento, as 22 probabilidades partem do uniforme e
     convergem para a resposta real do Jev; a confiança decide entre automático e revisão."""
@@ -328,48 +388,9 @@ def grafico_jev(registros, arquivos=("doc_0023.pdf", "doc_0028.pdf"), corte=0.95
     T = 16  # segundos por ciclo; cada documento ocupa metade
     L, A = 860, 430
     bx, bw = 600, 190  # barras: x inicial e largura de 100%
-    css = [f"""
-      .doc{{fill:#f3f2ee;stroke:#c3c2b7}} .mono{{font-family:ui-monospace,Menlo,monospace}}
-      .scan{{fill:#2a78d6}} .cinza{{fill:#c3c2b7}} .trilho{{fill:#e1e0d9}}
-      .ok{{stroke:#006300;fill:none}} .okt{{fill:#006300}} .rev{{stroke:#eb6834;fill:none}} .revt{{fill:#b5461b}}
-      .anim{{transform-box:fill-box;transform-origin:left center;animation-duration:{T}s;
-             animation-iteration-count:infinite;animation-timing-function:ease-in-out}}
-      @media (prefers-color-scheme: dark){{
-        .doc{{fill:#242423;stroke:#383835}} .scan{{fill:#3987e5}} .cinza{{fill:#52514e}}
-        .trilho{{fill:#2c2c2a}} .ok{{stroke:#0ca30c}} .okt{{fill:#0ca30c}} .rev{{stroke:#d95926}} .revt{{fill:#e8814f}}
-      }}
-      @media (prefers-reduced-motion: reduce){{.anim{{animation:none}}}}
-    """]
-    n_kf = 0
-
-    def anima(propriedade_por_fase, padrao):
-        """Cria keyframes para um elemento. propriedade_por_fase: lista de (percentual, css).
-        `padrao` é o estado estático (sem animação), igual ao fim da fase do 1º documento."""
-        nonlocal n_kf
-        n_kf += 1
-        nome = f"k{n_kf}"
-        quadros = " ".join(f"{p}%{{{v}}}" for p, v in propriedade_por_fase)
-        css.append(f"@keyframes {nome}{{{quadros}}} .{nome}{{animation-name:{nome};{padrao}}}")
-        return nome
-
-    def fases(valor_inicio, valor_fim_por_doc, chegada=(12, 25), saida=(46, 50)):
-        """Gera quadros para os dois documentos: começa em valor_inicio, vai ao valor final
-        do documento entre `chegada`, segura e volta ao início entre `saida`."""
-        quadros = []
-        for i, fim in enumerate(valor_fim_por_doc):
-            o = 50 * i
-            quadros += [(o, valor_inicio), (o + chegada[0], valor_inicio), (o + chegada[1], fim),
-                        (o + saida[0], fim), (o + saida[1] - (0.01 if i else 0), valor_inicio)]
-        return quadros
-
-    def visivel_na_fase(i, de=0, ate=49):
-        """Opacidade 1 só durante a fase do documento i (entre `de` e `ate` % da fase)."""
-        o = 50 * i
-        q = [(0, "opacity:0"), (100, "opacity:0")]
-        q += [(o + de, "opacity:0"), (o + de + 1, "opacity:1"), (o + ate - 1, "opacity:1"), (o + ate, "opacity:0")]
-        if i == 0 and de == 0:  # o primeiro documento já aparece no quadro inicial
-            q = [(0, "opacity:1")] + [x for x in q if x[0] != 0 and x[0] != 1]
-        return sorted(set(q), key=lambda x: x[0])
+    css = [css_animado(T)]
+    animacao = Animacao(css)
+    anima, fases, visivel_na_fase = animacao.anima, Animacao.fases, Animacao.visivel_na_fase
 
     corpo = [
         texto(24, 34, "Como o Jev decide", "t1", 16, peso=600),

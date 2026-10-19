@@ -2,3 +2,4 @@ typesafe-sdk==0.7.5
 python-dotenv
 pymupdf
 ocrmac
+httpx
