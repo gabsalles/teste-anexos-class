@@ -1,12 +1,13 @@
 # Prompt para o Genie (Databricks): experimento de classificação de anexos jurídicos
 
 > Como usar:
-> 1. Suba `taxonomia_v1.json` para o Git folder do projeto, em `prompts/`.
-> 2. Coloque os notebooks de referência em `referencias/`, ou anote os caminhos deles na seção 2c.
-> 3. Preencha os campos `<<...>>` que você já souber.
-> 4. Cole tudo abaixo da linha no Genie.
+> 1. Preencha na seção 3 o caminho da sua pasta pessoal no repositório (`<<pasta_pessoal>>`). Ela pode estar vazia; o Genie cria tudo lá dentro.
+> 2. Suba `taxonomia_v1.json` para `<<pasta_pessoal>>/prompts/`.
+> 3. Coloque os notebooks e os documentos de referência em `<<pasta_pessoal>>/referencias/`, ou anote os caminhos deles na seção 2c (podem estar fora da sua pasta).
+> 4. Preencha os campos `<<...>>` que você já souber.
+> 5. Cole tudo abaixo da linha no Genie.
 >
-> O Genie procura nos notebooks de referência o que estiver em branco e só pergunta o que não encontrar lá.
+> O Genie procura nos notebooks e documentos de referência o que estiver em branco e só pergunta o que não encontrar lá.
 
 ---
 
@@ -101,12 +102,16 @@ O `hash_texto` (sha256 do texto normalizado) é calculado por você. Não há PD
 - Fonte atual: `<<tabela ou visão com o texto de OCR; colunas>>`
 - Gabarito (rótulos), se houver: `<<tabela/arquivo; colunas>>`
 
-**c) Notebooks de referência.** Você vai receber notebooks que a equipe já usou para testar outros classificadores, incluindo as metodologias A e B da seção 3.6:
+**c) Material de referência.** Você vai receber dois tipos de material sobre os classificadores que a equipe já testou, o regex e o SVM (as metodologias A e B da seção 3.6):
 
-- Onde estão: `<<caminhos no workspace ou pasta referencias/ do Git folder>>`
-- O que cada um é: `<<ex.: leitura da fonte, classificador A, classificador B, avaliação, resultados>>`
+- **Notebooks**, que mostram o que foi executado: fonte de dados, código e tabelas de resultado.
+  - Onde estão: `<<caminhos no workspace ou pasta referencias/notebooks/>>`
+  - O que cada um é: `<<ex.: leitura da fonte, classificador regex, classificador SVM, avaliação, resultados>>`
+- **Documentos**, que explicam esses experimentos em mais detalhe: relatórios, apresentações, documentação de metodologia.
+  - Onde estão: `<<caminhos ou pasta referencias/documentos/>>`
+  - O que cada um é: `<<ex.: relatório do SVM, definição das classes, análise de erros do regex>>`
 
-**Leia todos antes de escrever código** e produza um `referencias/INVENTARIO.md` com o seguinte:
+**Leia tudo antes de escrever código.** Os notebooks dizem **como** foi feito. Os documentos costumam dizer **por quê**, **com qual gabarito** e **o que deu errado**. Produza um `referencias/INVENTARIO.md` com o seguinte, citando em cada item de onde veio a informação (arquivo e seção ou célula):
 
 - **Fonte de dados:** tabelas e visões lidas, coluna do texto de OCR, chaves (`anexo_id`, processo), filtros aplicados, volume e como os 130 mil anexos foram selecionados.
 - **Rótulos:** de onde vêm, a taxonomia usada (classes e nomes) e um primeiro rascunho do `mapeamento_classes` para a v1.
@@ -114,20 +119,48 @@ O `hash_texto` (sha256 do texto normalizado) é calculado por você. Não há PD
 - **Como o tempo e o custo foram medidos:** de onde saíram os 5,8 minutos (o que está dentro e fora do relógio), cluster e configuração, e como o custo foi contado.
 - **Chamadas de API e autenticação:** endpoints, secret scopes e padrão de retry, se algum dos notebooks já chama um modelo.
 - **Convenções da equipe:** catalog/schema, nomes de tabela, tags, bibliotecas e utilitários que valem a pena reaproveitar.
-- **Divergências:** onde os notebooks se contradizem ou contradizem este prompt.
+- **Metodologia de cada experimento** (principalmente dos documentos):
+  - como o regex foi construído e quais classes ele cobre;
+  - como o SVM foi treinado: features, dados de treino, separação treino/teste, validação;
+  - em que conjunto e com qual gabarito os 88% e os 92% foram medidos;
+  - métricas por classe, se houver.
+- **Definições de classe e critérios de rotulagem** usados pela equipe: como a equipe decide, por exemplo, despacho × decisão. Compare com `taxonomia_v1.json` e liste onde as definições divergem. Essas diferenças explicam parte dos conflitos e alimentam o laboratório de prompts (seção 3.8).
+- **Erros e limitações conhecidos:** classes em que regex e SVM erram, pares que confundem, tipos de texto problemáticos (OCR ruim, documentos longos, híbridos), casos de borda citados. Use isso para:
+  - montar o `dev` do laboratório, sobreamostrando esses casos;
+  - fazer as primeiras hipóteses de melhoria do prompt;
+  - escolher as análises por classe do benchmark.
+- **Decisões e premissas** já tomadas pela equipe: custo da revisão, volumes, metas, restrições do ambiente. Elas viram valores do `params.yaml` ou perguntas para mim.
+- **Divergências:**
+  - onde os notebooks e os documentos se contradizem (por exemplo, um documento diz 92% e a tabela de resultados dá outro número; ou o documento descreve um conjunto e o notebook usa outro);
+  - onde o material contradiz este prompt.
+  - Nas divergências entre material, **o que o notebook e as tabelas mostram vale como fato**, e o documento como intenção. Registre as duas versões e me pergunte.
 
-Regras para os notebooks de referência:
+Regras para o material de referência:
 
-- Eles são **material de consulta**, não especificação. Se algo neles conflitar com este prompt, a arquitetura deste prompt vale, e o conflito vai no inventário para eu decidir.
-- Não altere os notebooks de referência nem as tabelas que eles escrevem. Leia e copie para o projeto só o que for reaproveitado, com a origem citada num comentário.
-- Não copie chaves ou tokens que apareçam neles. Use o mesmo secret scope via `dbutils.secrets`.
+- Notebooks e documentos são **material de consulta**, não especificação. Se algo neles conflitar com este prompt, a arquitetura deste prompt vale, e o conflito vai no inventário para eu decidir.
+- Não altere os notebooks, os documentos nem as tabelas que os notebooks escrevem. Leia e copie para o projeto só o que for reaproveitado, com a origem citada num comentário.
+- Não copie chaves ou tokens que apareçam em qualquer um deles. Use o mesmo secret scope via `dbutils.secrets`.
 - Use os resultados de A e B a partir das tabelas que eles já gravaram (`fonte_resultado = 'historico'`). Rodar A ou B de novo só se for necessário e eu aprovar.
+- Definições de classe vindas dos documentos **não entram direto** na `taxonomia_v1.json`. Elas viram hipóteses de um desafiante no laboratório (seção 3.8) e só substituem a v1 se passarem no gate.
 - Tudo o que o inventário responder sai da lista de perguntas da etapa 1.
 
-## 3. Arquitetura (Git folder)
+## 3. Arquitetura (pasta pessoal no repositório)
+
+**Tudo é criado dentro de uma pasta só minha no repositório:** `<<pasta_pessoal>>` (ex.: `usuarios/<meu_nome>/classificacao_anexos/`). Hoje ela está vazia.
+
+- **Não crie, altere nem apague nada fora dela.** O repositório é compartilhado e o resto pertence a outras pessoas e projetos. Isso inclui arquivos na raiz, como `databricks.yml`, `requirements.txt`, `.gitignore` e configuração de CI.
+- Se algo precisar ficar fora da pasta, pare e me pergunte antes.
+- O material de referência fora da pasta (seção 2c) é só lido.
+- Imports são relativos à pasta: use `sys.path` ou `%run` apontando para `<<pasta_pessoal>>/src`, sem instalar pacote no repositório nem mudar caminhos globais.
+- O Asset Bundle (`databricks.yml` e `resources/`) fica **dentro** da pasta, como um bundle próprio.
+- Tabelas, volumes e experimentos do MLflow também ficam num espaço só meu:
+  - schema `<<catalog>>.<<schema_pessoal>>`;
+  - experimento MLflow em `<<caminho do workspace>>/classificacao_anexos`.
+  - Não grave em schemas compartilhados. Pergunte se o schema não existir ou se eu não tiver permissão para criá-lo.
+- Não faça commit nem push por conta própria. Eu reviso e faço os commits.
 
 ```
-classificacao_anexos/
+<<pasta_pessoal>>/
 ├── config/
 │   └── params.yaml            # TODOS os parâmetros; widgets só sobrescrevem
 ├── prompts/
@@ -153,9 +186,10 @@ classificacao_anexos/
 │   ├── 06_conflitos.py        # fila de análise, padrões de dúvida, retorno da revisão
 │   ├── 07_laboratorio_prompts.py  # itera versões do prompt numa amostra; gate de promoção
 │   └── 08_teste_vazao.py      # teste de carga e rodada total (130 mil anexos)
-├── referencias/               # notebooks de referência (só leitura) + INVENTARIO.md
+├── referencias/               # só leitura: notebooks/, documentos/ + INVENTARIO.md
 ├── tests/                     # pytest com ClienteMock e textos de exemplo
-└── resources/job.yml          # Databricks Asset Bundle: job 01 → 02 → 03 → 06; jobs do 05 e do 08
+├── databricks.yml             # bundle próprio desta pasta
+└── resources/job.yml          # jobs: 01 → 02 → 03 → 06; jobs do 05 e do 08
 ```
 
 Princípio: **notebooks só orquestram**, a lógica fica em `src/` (importável e testável). Nenhum valor fixo de negócio dentro de notebook.
@@ -171,8 +205,10 @@ Princípio: **notebooks só orquestram**, a lógica fica em `src/` (importável 
 
 ```yaml
 ambiente:
+  pasta_pessoal: <<caminho da pasta no repositório>>
   catalog: <<catalog>>
-  schema: <<schema>>
+  schema: <<schema_pessoal>>      # só meu; nada em schema compartilhado
+  mlflow_experimento: <<caminho do experimento>>
 fonte:
   tipo: <<volume|tabela|...>>
   local: <<caminho ou tabela>>
@@ -212,14 +248,19 @@ benchmark:
   usd_por_dbu: <<preço do DBU do contrato>>
   usd_por_hora_revisao_humana: <<custo/hora do revisor>>
   revisoes_por_hora: <<anexos revisados por hora>>
+  usd_por_erro_nao_revisado: <<custo estimado de um anexo classificado errado que passa sem revisão>>
+  faixa_sensibilidade_usd_erro: [0.1, 0.25, 0.5, 1, 2, 5, 10]
+  faixa_sensibilidade_usd_revisao: [0.1, 0.25, 0.5, 1, 2]
   metodologias:
     decision1: {tipo: este_pipeline}
     metodo_a:
-      nome: <<ex.: regras/regex, modelo supervisionado, LLM generativo...>>
+      nome: regex                # acurácia reportada: 88%
+      manutencao_horas_mes: <<horas/mês ajustando regras>>
       resultados: <<tabela/notebook/job existente>>
       reexecutavel: <<true|false>>
     metodo_b:
-      nome: <<...>>
+      nome: svm                  # acurácia reportada: 92%
+      manutencao_horas_mes: <<horas/mês: rotular, treinar de novo, publicar>>
       resultados: <<...>>
       reexecutavel: <<true|false>>
 conflitos:
@@ -259,7 +300,7 @@ escala:
 - Widgets do notebook podem sobrescrever qualquer chave (por exemplo, `modelo.nome`, `prompt.versao`, `execucao.limite_docs`, `execucao.rotulo`).
 - A config final (yaml + widgets) é congelada, gravada inteira em `execucoes.params_json` e resumida em `config_hash`. A execução tem que poder ser reproduzida só com esse registro.
 
-### 3.3 Modelo de dados (Delta no Unity Catalog, schema `<<catalog>>.<<schema>>`)
+### 3.3 Modelo de dados (Delta no Unity Catalog, schema pessoal `<<catalog>>.<<schema_pessoal>>`)
 
 | Tabela | Grão | Colunas principais |
 |---|---|---|
@@ -338,17 +379,19 @@ Calcule por `run_id` e grave no MLflow (params = config congelada + `prompt_hash
 
 ### 3.6 Benchmark de custo e tempo contra as metodologias da equipe (`src/benchmark.py` + `05_benchmark`)
 
-A equipe já classificou anexos com duas outras metodologias. Monte desde já um benchmark que compare as três em **custo** e **tempo**, e também em qualidade quando houver gabarito, porque custo e tempo só significam algo para uma qualidade conhecida.
+A equipe já classificou anexos com duas outras metodologias: **regex** (A, 88% de acurácia reportada) e **SVM** (B, 92%). As duas rodam só no cluster, então **custam menos para executar** que uma chamada de API. Por isso o benchmark não pode parar em "quem é mais barato para rodar". Ele precisa responder **quem é mais barato por anexo classificado corretamente**, somando execução, revisão humana, erros que passam e manutenção (ver "Caso de negócio" abaixo). Monte desde já um benchmark que compare as três em **custo**, **tempo** e qualidade, porque custo e tempo só significam algo para uma qualidade conhecida.
 
-As duas metodologias (preencha a partir dos notebooks de referência, seção 2c, e pergunte o que continuar em branco):
+As duas metodologias (preencha a partir dos notebooks e documentos de referência, seção 2c, e pergunte o que continuar em branco):
 
 | | Metodologia A | Metodologia B |
 |---|---|---|
-| O que é | `<<ex.: regras/regex, modelo supervisionado, LLM generativo>>` | `<<...>>` |
+| O que é | Regras / regex | SVM (modelo supervisionado) |
+| Acurácia reportada | 88% | 92% |
+| Como os 88% e 92% foram medidos | `<<gabarito, conjunto, classes; havia separação treino/teste?>>` | `<<...>>` |
 | Onde estão código e resultados | `<<notebook, job, tabela>>` | `<<...>>` |
 | Dá para rodar de novo agora? | `<<sim/não>>` | `<<sim/não>>` |
 | Taxonomia | `<<mesmas 22 classes? outra?>>` | `<<...>>` |
-| Devolve confiança/probabilidade? | `<<sim/não>>` | `<<sim/não>>` |
+| Devolve confiança/probabilidade? | Em geral não (casou/não casou, ou ordem das regras) | Score de decisão por classe, que precisa ser calibrado |
 | De onde vem o custo | `<<tokens de API, DBU de cluster, GPU, licença>>` | `<<...>>` |
 
 **Protocolo para a comparação ser justa:**
@@ -358,6 +401,9 @@ As duas metodologias (preencha a partir dos notebooks de referência, seção 2c
 3. **Mesmo lugar e mesma janela.** As que forem reexecutáveis rodam no mesmo tipo de cluster e próximas no tempo, com `repeticoes` execuções cada. Reporte a média e a variação entre as repetições.
 4. **Taxonomia alinhada.** Se A ou B usam outras classes, crie um mapeamento explícito (`mapeamento_classes`: classe original → classe da v1, ou `sem_equivalente`) e calcule a acurácia só nas classes mapeáveis. Informe quantos anexos ficaram de fora.
 5. **Mesma regra de decisão.** Para quem devolve confiança, compare no mesmo nível de qualidade: escolha o corte de cada metodologia que atinge a mesma acurácia nos casos automáticos (por exemplo, 99%) e compare o % automatizado. Quem não devolve confiança entra com 100% automatizado e a sua acurácia bruta.
+   - **SVM:** calibre os scores (Platt ou isotônica) no `dev` e avalie no `holdout`, para que a confiança dele seja comparável com a do Decision-1. Não compare o SVM sem calibração, porque isso o desfavorece injustamente.
+   - **Regex:** se as regras tiverem prioridade ou mais de uma casar, use "uma regra só, sem conflito" como sinal de confiança, e documente.
+6. **Mesmo gabarito.** Recalcule os 88% e os 92% no **mesmo** holdout rotulado em que o Decision-1 é avaliado. Os números reportados ficam só como referência. Se o SVM foi treinado com anexos que estão no holdout, retire esses anexos ou, com minha aprovação, treine de novo sem eles, senão a acurácia dele fica inflada.
 
 **O que medir por metodologia e execução:**
 
@@ -374,6 +420,30 @@ As duas metodologias (preencha a partir dos notebooks de referência, seção 2c
 - **Custo de operação:** anexos que vão para revisão humana × custo da revisão (`usd_por_hora_revisao_humana / revisoes_por_hora`). Esse custo costuma superar o do modelo e é onde a confiança calibrada faz diferença.
 - **Qualidade** (com gabarito): acurácia, F1 macro e acurácia nos pares confundíveis.
 - **Projeção mensal:** custo total e horas de processamento para cada volume de `volume_mensal_projecao`.
+
+**Caso de negócio** (a pergunta principal do benchmark):
+
+Custo total por mil anexos de cada metodologia, separado em:
+
+- **execução:** API + DBU;
+- **revisão:** anexos enviados à revisão × custo de uma revisão;
+- **erros:** erros que passam sem revisão × `usd_por_erro_nao_revisado`;
+- **manutenção:** `manutencao_horas_mes` × custo/hora, rateado pelo volume mensal. No Decision-1, a manutenção é o tempo gasto no laboratório de prompts.
+
+Com esse custo total:
+
+- **Ponto de equilíbrio:** quantos erros ou revisões evitados por mil anexos o Decision-1 precisa para empatar com o regex e com o SVM. Como referência: a API custa cerca de US$ 21 pelos 130 mil anexos. Se um erro evitado valer US$ 1, bastam cerca de 21 erros evitados nos 130 mil (+0,016 ponto percentual de acurácia). Mostre o número real, com DBU e preços daqui.
+- **Erros absolutos nos 130 mil:** regex com 88% são cerca de 15.600 erros; SVM com 92%, cerca de 10.400. Mostre os erros do Decision-1 na mesma escala, com intervalo de confiança vindo do holdout.
+- **Sensibilidade:** um mapa de calor da metodologia vencedora para cada combinação de `faixa_sensibilidade_usd_erro` × `faixa_sensibilidade_usd_revisao`. Mostra a partir de que custo de erro o Decision-1 compensa, e se existe alguma faixa em que o SVM ou o regex vencem.
+- **Onde cada um ganha:** F1 por classe das três lado a lado. É comum o SVM ir bem nas classes frequentes e mal nas raras, e o regex falhar em textos sem título ou com OCR ruim. Destaque as classes em que o Decision-1 ganha ou perde.
+- **Cenários de uso:** compare não só "um substitui o outro", mas:
+  1. Decision-1 sozinho;
+  2. SVM sozinho;
+  3. **SVM como principal e Decision-1 só nos casos em que o SVM tem confiança baixa** (custo de API só numa fração dos anexos);
+  4. **automático só quando o SVM e o Decision-1 concordam**, com o resto indo para revisão;
+  5. regex como filtro rápido para as classes em que ele acerta quase sempre, e Decision-1 no resto.
+  - Para cada cenário, mostre a acurácia nos automáticos, o % automatizado, os erros que passam, o custo total e o tempo.
+- **Conclusão honesta:** se o SVM calibrado empatar em acurácia e em % automatizado, diga isso. Nesse caso, a vantagem do Decision-1 fica na manutenção e nos cenários 3 ou 4, e o relatório deve dizer exatamente isso.
 
 **Tabelas:**
 
@@ -398,6 +468,9 @@ As duas metodologias (preencha a partir dos notebooks de referência, seção 2c
 - custo por mil anexos, em barras empilhadas por componente;
 - latência por anexo, em boxplot ou pontos;
 - acurácia × custo por mil, um ponto por metodologia;
+- custo total por mil, empilhado em execução, revisão, erros e manutenção;
+- mapa de calor de sensibilidade (custo do erro × custo da revisão → vencedor);
+- curva % automatizado × acurácia nos automáticos, uma linha por metodologia e por cenário;
 - custo mensal projetado por volume;
 - tabela-resumo final;
 - um parágrafo de conclusão escrito a partir dos números, dizendo quem vence em quê e com quais ressalvas (amostra, resultados históricos, classes não mapeadas).
@@ -583,20 +656,26 @@ As outras metodologias processaram cerca de 130 mil anexos em cerca de 5,8 minut
 5. Erro de um anexo nunca derruba a execução: ele é gravado e entra na taxa de erro.
 6. `src/metricas.py` usa funções puras (pandas/numpy) com testes, e os notebooks só as chamam.
 7. Prefira o que o Databricks já oferece (Delta, MLflow, Jobs/Asset Bundles, AI/BI dashboard, Volumes) antes de criar infraestrutura própria.
-8. Não invente detalhes da API ou da fonte. Procure primeiro nos notebooks de referência; se faltar informação, pergunte.
-9. Os notebooks de referência não são alterados. O que for reaproveitado é copiado para `src/` com a origem citada.
+8. Não invente detalhes da API ou da fonte. Procure primeiro nos notebooks e documentos de referência; se faltar informação, pergunte.
+9. O material de referência não é alterado. O que for reaproveitado é copiado para `src/` com a origem citada.
+10. Nada é criado ou alterado fora de `<<pasta_pessoal>>` e do schema pessoal. Na dúvida, pergunte.
+11. Sem commit nem push automático.
 
 ## 5. Ordem de entrega (pare e mostre o resultado ao fim de cada etapa)
 
-1. **Leitura dos notebooks de referência + perguntas.**
-   - Leia os notebooks da seção 2c e entregue o `referencias/INVENTARIO.md`.
+1. **Leitura do material de referência + perguntas.**
+   - Leia os notebooks e documentos da seção 2c e entregue o `referencias/INVENTARIO.md`, com a fonte de cada informação e as divergências encontradas.
    - Depois liste só o que continuar faltando e espere as respostas:
      - da seção 2: API e fonte (tabela e colunas do texto de OCR);
+     - da seção 3: caminho da pasta pessoal, schema pessoal e experimento do MLflow, se não estiverem preenchidos;
      - da seção 3.6: as metodologias A e B;
      - da seção 3.8: rótulos disponíveis e critérios do gate;
      - da seção 3.9: o que os 5,8 min incluem e a cota do deployment.
-2. **Estrutura + setup:** pastas, `params.yaml`, `src/config.py`, `src/prompt.py` (com o teste do hash `c4ffefc2e54f`) e `00_setup` rodado.
-   - Aceite: tabelas criadas e o teste do hash passando.
+2. **Estrutura + setup** dentro de `<<pasta_pessoal>>`: pastas, `params.yaml`, `src/config.py`, `src/prompt.py` (com o teste do hash `c4ffefc2e54f`) e `00_setup` rodado.
+   - Aceite:
+     - tabelas criadas no schema pessoal;
+     - o teste do hash passando;
+     - `git status` mostrando mudanças só dentro de `<<pasta_pessoal>>`.
 3. **Ingestão** do texto de OCR numa amostra de cerca de 50 anexos.
    - Aceite: `anexos_texto` preenchida, com a distribuição de tamanho e o % de textos insuficientes reportados, e a segunda rodada não regrava nada.
 4. **Classificação com `ClienteMock`** na mesma amostra.
