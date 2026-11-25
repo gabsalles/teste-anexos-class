@@ -2,7 +2,7 @@
 
 > Como usar:
 > 1. Preencha na seção 3 o caminho da sua pasta pessoal no repositório (`<<pasta_pessoal>>`). Ela pode estar vazia; o Genie cria tudo lá dentro.
-> 2. Suba `taxonomia_v1.json` para `<<pasta_pessoal>>/prompts/`.
+> 2. Suba `taxonomia_v1.json` e `taxonomia_benchmark_3c_v1.json` para `<<pasta_pessoal>>/prompts/`.
 > 3. Coloque os notebooks e os documentos de referência em `<<pasta_pessoal>>/referencias/`, ou anote os caminhos deles na seção 2c (podem estar fora da sua pasta).
 > 4. Preencha os campos `<<...>>` que você já souber.
 > 5. Cole tudo abaixo da linha no Genie.
@@ -13,7 +13,7 @@
 
 ## 1. Seu papel e o objetivo
 
-Você é um engenheiro de dados e ML montando, no Databricks, um **experimento reprodutível de classificação de anexos de processos judiciais brasileiros**. Cada anexo (texto já extraído por OCR na fonte) deve receber uma de 22 classes (21 tipos de peça, como petição inicial, contestação, sentença, despacho, certidão e procuração, mais `outro`).
+Você é um engenheiro de dados e ML montando, no Databricks, um **experimento reprodutível de classificação de anexos de processos judiciais brasileiros**. Cada anexo (texto já extraído por OCR na fonte) deve receber uma classe de uma taxonomia definida em arquivo. No benchmark atual são **3 classes: acórdão, sentença e petição inicial** (mais `outro`); a taxonomia completa do experimento original tem 22.
 
 O modelo é o **Microsoft-Decision-1** (modelo de decisão da Microsoft, servido pela Azure). Ele não é um LLM de chat: recebe `state` (contexto) e `questions` (uma pergunta do tipo `choice` com instruções e a descrição de cada classe) e devolve `choice`, `confidence` (0–1) e `probabilities` (uma por classe, soma 1), mais `usage` (tokens). Ele não escreve texto livre, então não há resposta para interpretar.
 
@@ -29,6 +29,13 @@ O experimento já foi feito fora do Databricks com esse mesmo modelo, chamado pe
 - O valor está nas probabilidades: um corte de confiança decide entre classificar automaticamente e mandar para revisão humana. Mudar o corte não exige chamar o modelo de novo.
 
 Seu objetivo é montar a mesma arquitetura no Databricks, com **prompt, parâmetros, execução e monitoramento separados**, para rodar em anexos reais e comparar execuções (modelo, versão do prompt, corte) ao longo do tempo.
+
+**Há duas taxonomias, e a pipeline aceita qualquer uma pelo parâmetro `prompt.versao`:**
+
+- **`taxonomia_benchmark_3c_v1.json`:** **acórdão, sentença e petição inicial**, mais `outro` como válvula de segurança. É a do **benchmark contra regex e SVM**, que só conhecem essas 3 classes, e é o foco agora.
+  - É um rascunho derivado da v1, com ~1.000 tokens fixos estimados, contra 2.895 da v1.
+  - As descrições foram reescritas para separar bem os três tipos. Ele vai ser melhorado no laboratório (seção 3.8).
+- **`taxonomia_v1.json`:** as 22 classes do experimento original. Fica disponível para quando o escopo crescer. Não é usada no benchmark, porque comparar 22 classes contra classificadores de 3 desfavoreceria o Decision-1 e mediria outra coisa.
 
 ## 2. O que muda neste ambiente (e como tratar)
 
@@ -144,6 +151,25 @@ Regras para o material de referência:
 - Definições de classe vindas dos documentos **não entram direto** na `taxonomia_v1.json`. Elas viram hipóteses de um desafiante no laboratório (seção 3.8) e só substituem a v1 se passarem no gate.
 - Tudo o que o inventário responder sai da lista de perguntas da etapa 1.
 
+**d) Ainda não há chave de API.** Ela está sendo pedida. Até chegar, trabalhe no **modo sem chave**:
+
+- `modelo.cliente: mock` no `params.yaml`. Toda execução com mock grava `provedor = 'mock'`, e **nunca** entra no benchmark, no gate ou em métrica de qualidade. O dashboard as filtra por padrão.
+- **O mock precisa ser realista**, senão fila de revisão, calibração e conflitos ficam vazios e não dá para validar nada:
+  - confiança alta na maioria dos anexos e uma fração com probabilidade espalhada entre 2 classes;
+  - latência simulada (~0,55 s, com cauda);
+  - alguns 429 e timeouts aleatórios, para exercitar o retry;
+  - tokens estimados pelo tamanho do texto.
+  - Se houver resultados do SVM, uma opção boa é o mock seguir a classe do SVM com ruído, para que os conflitos tenham padrão real.
+- **Implemente o cliente real mesmo assim:** monte a requisição e leia a resposta, com o teste de parsing usando o JSON de referência da seção 2a. Quando a chave chegar, a ativação é preencher o secret e mudar `modelo.cliente` para `real`.
+- **Adiante tudo o que não depende da API**, principalmente o lado regex/SVM das seções 3.6 a 3.8:
+  - resultados carregados;
+  - calibração do SVM;
+  - acurácia recalculada no holdout;
+  - conflitos regex × SVM;
+  - rotulagem do dev e do holdout;
+  - primeiras versões do prompt.
+- O que depende da API fica marcado como pendente no relatório de cada etapa, sem bloquear as outras.
+
 ## 3. Arquitetura (pasta pessoal no repositório)
 
 **Tudo é criado dentro de uma pasta só minha no repositório:** `<<pasta_pessoal>>` (ex.: `usuarios/<meu_nome>/classificacao_anexos/`). Hoje ela está vazia.
@@ -164,6 +190,7 @@ Regras para o material de referência:
 ├── config/
 │   └── params.yaml            # TODOS os parâmetros; widgets só sobrescrevem
 ├── prompts/
+│   ├── taxonomia_benchmark_3c_v1.json  # 3 classes + outro (fornecido; ponto de partida do benchmark)
 │   └── taxonomia_v1.json      # instruções + 22 classes (fornecido, não reescrever)
 ├── src/
 │   ├── config.py              # carrega yaml + widgets → dataclass imutável; calcula config_hash
@@ -196,10 +223,17 @@ Princípio: **notebooks só orquestram**, a lógica fica em `src/` (importável 
 
 ### 3.1 Prompt (`prompts/` + `src/prompt.py`)
 
-- `taxonomia_v1.json` tem `instrucoes` (pergunta, contexto, como decidir) e `classes` (cada uma com `o_que_e`, `sinais`, `nao_confundir`). Não altere o conteúdo. Para testar uma variante, crie `taxonomia_v2.json`.
-- `prompt_hash = sha256(json.dumps([instrucoes, classes], ensure_ascii=False, sort_keys=True))[:12]`. Para a v1, isso tem que dar **`c4ffefc2e54f`**. Escreva um teste que confere.
+- Cada taxonomia tem `instrucoes` (pergunta, contexto, como decidir) e `classes` (cada uma com `o_que_e`, `sinais`, `nao_confundir`). Não altere os arquivos fornecidos. Para testar uma variante, crie um arquivo novo em `prompts/candidatos/` (ex.: `taxonomia_benchmark_3c_v2a.json`).
+- `prompt_hash = sha256(json.dumps([instrucoes, classes], ensure_ascii=False, sort_keys=True))[:12]`. Tem que dar **`c4ffefc2e54f`** para a v1 e **`f96ed8ee75b1`** para a `benchmark_3c_v1`. Escreva um teste que confere as duas.
+- As classes válidas de cada execução são as chaves de `classes` da taxonomia usada. Grave a versão da taxonomia em `execucoes` e `classificacoes`, para que nenhuma métrica misture execuções de 3 e de 22 classes.
 - O `state` enviado é `{"documento": {"texto", "paginas", "origem_texto"}}`, com `origem_texto` = `"OCR (pode conter erros)"` (aqui todo texto vem de OCR). Mande `paginas` só se a fonte informar; não invente o valor.
-- Texto maior que `limite_chars` (60.000) é cortado: os primeiros 70% e os últimos 30%, separados por `\n\n[... trecho omitido ...]\n\n`, porque título, partes, pedidos, dispositivo e assinatura ficam no começo e no fim. Marque `truncado = true`.
+- **Limpeza antes de cortar** (`texto.limpar_boilerplate`): remova as linhas que se repetem em várias páginas (carimbos e rodapés de sistema, numeração de folhas, "Assinado eletronicamente por..."). Mantenha a primeira ocorrência. Senão, uma janela curta gasta boa parte dos caracteres com carimbo. Grave `chars_antes` e `chars_depois`.
+- **Janela de texto** (`prompt.janela`): quanto do anexo é enviado. É uma variável do experimento, e não só um limite técnico (ver "Janela de texto" na seção 3.8):
+  - `inteiro`: tudo, respeitando `limite_chars` (60.000), que existe pelo limite de 32.768 tokens por requisição;
+  - `inicio_fim`: os primeiros `janela_inicio_chars` e os últimos `janela_fim_chars`;
+  - `inicio`: só os primeiros `janela_inicio_chars`.
+  - Os trechos são separados por `\n\n[... trecho omitido ...]\n\n`, porque título, partes, pedidos, dispositivo e assinatura ficam no começo e no fim.
+  - Marque `truncado = true` sempre que algo for omitido e grave a estratégia e os tamanhos usados.
 
 ### 3.2 Parâmetros (`config/params.yaml`)
 
@@ -224,6 +258,7 @@ modelo:
   nome: <<microsoft-decision-1 / nome do deployment>>
   secret_scope: <<scope>>
   secret_key: <<key>>
+  cliente: mock                  # mock até a chave chegar; depois real
   concorrencia: 8                # inicial; a rodada total usa a seção escala
   max_retries: 4
   timeout_s: 60
@@ -231,9 +266,13 @@ modelo:
   usd_por_mtok_entrada: <<0.042?>>   # usado quando a resposta não traz o custo
   usd_por_mtok_saida: <<0.0?>>
 prompt:
-  versao: v1
-  limite_chars: 60000
-  fracao_inicio: 0.7
+  versao: benchmark_3c_v1        # ou v1 (22 classes)
+  limite_chars: 60000            # teto técnico (32.768 tokens por requisição)
+  fracao_inicio: 0.7             # usado quando janela = inteiro e passa do teto
+  janela: inicio_fim             # inteiro | inicio_fim | inicio
+  janela_inicio_chars: 4000
+  janela_fim_chars: 1500
+  limpar_boilerplate: true
 decisao:
   corte_confianca: 0.95          # acima: automático; abaixo: revisão humana
 execucao:
@@ -275,7 +314,14 @@ laboratorio:
   tamanho_holdout: 1000          # só usada no gate; nunca para ajustar o prompt
   min_por_classe: 30             # classes raras entram com pelo menos isso
   sobreamostrar_conflitos_pct: 30   # % do dev vindo de anexos em que A e B discordam
-  campeao: v1                    # versão em uso; desafiantes ficam em prompts/candidatos/
+  campeao: benchmark_3c_v1       # versão em uso; desafiantes ficam em prompts/candidatos/
+  janelas_teste:                 # comparadas no dev contra 'inteiro'
+    - {janela: inicio, inicio: 2000}
+    - {janela: inicio, inicio: 4000}
+    - {janela: inicio_fim, inicio: 3000, fim: 1000}
+    - {janela: inicio_fim, inicio: 4000, fim: 1500}
+    - {janela: inicio_fim, inicio: 8000, fim: 3000}
+    - {janela: inteiro}
   gate:                          # "confiança suficiente" para a rodada total
     acuracia_min_ic95_inferior: <<ex.: 0.95>>   # limite inferior do IC 95% (Wilson), dev e holdout
     erro_confiante_max_pct: <<ex.: 0.5>>
@@ -284,7 +330,7 @@ laboratorio:
     ece_max: <<ex.: 0.03>>
     troca_classe_entre_repeticoes_max_pct: 0.5
     sem_piora_regressao: true
-    tokens_fixos_max: <<ex.: 3500>>   # limite de tamanho do prompt (custo e vazão)
+    tokens_fixos_max: <<ex.: 1500>>   # limite de tamanho do prompt (custo e vazão)
 escala:
   meta_docs: 130000
   meta_minutos: 5.8              # tempo das outras metodologias (confirmar o escopo)
@@ -357,7 +403,9 @@ Calcule por `run_id` e grave no MLflow (params = config congelada + `prompt_hash
 
 **Qualidade, quando houver gabarito:**
 - acurácia geral, precisão, recall e F1 por classe, F1 macro;
-- matriz de confusão, destacando os pares que já se sabe serem confundíveis (despacho × decisão interlocutória, despacho × certidão, decisão monocrática × agravo de instrumento, ata de audiência × termo de acordo × sentença homologatória);
+- matriz de confusão, destacando os pares que já se sabe serem confundíveis:
+  - no benchmark de 3 classes: acórdão × sentença (o acórdão transcreve a sentença), sentença × petição inicial (o relatório da sentença resume os pedidos) e qualquer classe × `outro` (decisão monocrática, contestação, recurso);
+  - na v1 de 22 classes: despacho × decisão interlocutória, despacho × certidão, decisão monocrática × agravo de instrumento, ata de audiência × termo de acordo × sentença homologatória;
 - acurácia e confiança por recorte (qualidade do OCR, se houver; faixa de tamanho do texto; justiça; sistema);
 - **calibração:** ECE com 10 faixas e diagrama de confiabilidade;
 - **acurácia × cobertura:** para cada corte, a acurácia dos que seriam classificados automaticamente e o % automatizado. Esse é o número que define o corte de produção.
@@ -379,7 +427,9 @@ Calcule por `run_id` e grave no MLflow (params = config congelada + `prompt_hash
 
 ### 3.6 Benchmark de custo e tempo contra as metodologias da equipe (`src/benchmark.py` + `05_benchmark`)
 
-A equipe já classificou anexos com duas outras metodologias: **regex** (A, 88% de acurácia reportada) e **SVM** (B, 92%). As duas rodam só no cluster, então **custam menos para executar** que uma chamada de API. Por isso o benchmark não pode parar em "quem é mais barato para rodar". Ele precisa responder **quem é mais barato por anexo classificado corretamente**, somando execução, revisão humana, erros que passam e manutenção (ver "Caso de negócio" abaixo). Monte desde já um benchmark que compare as três em **custo**, **tempo** e qualidade, porque custo e tempo só significam algo para uma qualidade conhecida.
+O benchmark tem **3 classes: acórdão, sentença e petição inicial**. O Decision-1 usa a `taxonomia_benchmark_3c` (seção 1).
+
+A equipe já classificou esses anexos com duas outras metodologias: **regex** (A, 88% de acurácia reportada) e **SVM** (B, 92%). As duas rodam só no cluster, então **custam menos para executar** que uma chamada de API. Por isso o benchmark não pode parar em "quem é mais barato para rodar". Ele precisa responder **quem é mais barato por anexo classificado corretamente**, somando execução, revisão humana, erros que passam e manutenção (ver "Caso de negócio" abaixo). Monte desde já um benchmark que compare as três em **custo**, **tempo** e qualidade, porque custo e tempo só significam algo para uma qualidade conhecida.
 
 As duas metodologias (preencha a partir dos notebooks e documentos de referência, seção 2c, e pergunte o que continuar em branco):
 
@@ -390,7 +440,7 @@ As duas metodologias (preencha a partir dos notebooks e documentos de referênci
 | Como os 88% e 92% foram medidos | `<<gabarito, conjunto, classes; havia separação treino/teste?>>` | `<<...>>` |
 | Onde estão código e resultados | `<<notebook, job, tabela>>` | `<<...>>` |
 | Dá para rodar de novo agora? | `<<sim/não>>` | `<<sim/não>>` |
-| Taxonomia | `<<mesmas 22 classes? outra?>>` | `<<...>>` |
+| Classes | acórdão, sentença e petição inicial: `<<nomes usados; o que faz com outros tipos?>>` | `<<...>>` |
 | Devolve confiança/probabilidade? | Em geral não (casou/não casou, ou ordem das regras) | Score de decisão por classe, que precisa ser calibrado |
 | De onde vem o custo | `<<tokens de API, DBU de cluster, GPU, licença>>` | `<<...>>` |
 
@@ -399,7 +449,11 @@ As duas metodologias (preencha a partir dos notebooks e documentos de referênci
 1. **Mesmo conjunto.** As três rodam sobre a mesma lista de `anexo_id` (`benchmark.amostra`). Se houver gabarito, use a amostra rotulada. Se uma metodologia não puder rodar de novo, use os resultados que já existem só na interseção de anexos e marque `fonte_resultado = 'historico'`.
 2. **Mesmo texto.** Todas as metodologias recebem o mesmo texto de OCR da fonte (`anexos_texto`). Nenhuma conta tempo ou custo de OCR, porque ele já foi feito antes. Se alguma metodologia fizer pré-processamento próprio, ele entra no tempo e no custo dela.
 3. **Mesmo lugar e mesma janela.** As que forem reexecutáveis rodam no mesmo tipo de cluster e próximas no tempo, com `repeticoes` execuções cada. Reporte a média e a variação entre as repetições.
-4. **Taxonomia alinhada.** Se A ou B usam outras classes, crie um mapeamento explícito (`mapeamento_classes`: classe original → classe da v1, ou `sem_equivalente`) e calcule a acurácia só nas classes mapeáveis. Informe quantos anexos ficaram de fora.
+4. **Taxonomia alinhada.** As três metodologias usam as mesmas 3 classes. Confirme pelo material de referência:
+   - os nomes que regex e SVM usam, e crie `mapeamento_classes` para `acordao`, `sentenca` e `peticao_inicial`;
+   - se os 130 mil anexos **só contêm** esses 3 tipos (corpus filtrado antes) ou se há outros tipos misturados, e como regex e SVM tratam um documento que não é nenhum dos três;
+   - se o corpus só tem os 3 tipos, `outro` do Decision-1 conta como erro, mas é reportado à parte, porque costuma indicar OCR ilegível ou um rótulo errado no gabarito;
+   - se há outros tipos e regex/SVM são forçados a escolher entre 3, compare também a versão do Decision-1 sem `outro` (usando a maior probabilidade entre as 3), para a comparação ficar nas mesmas condições.
 5. **Mesma regra de decisão.** Para quem devolve confiança, compare no mesmo nível de qualidade: escolha o corte de cada metodologia que atinge a mesma acurácia nos casos automáticos (por exemplo, 99%) e compare o % automatizado. Quem não devolve confiança entra com 100% automatizado e a sua acurácia bruta.
    - **SVM:** calibre os scores (Platt ou isotônica) no `dev` e avalie no `holdout`, para que a confiança dele seja comparável com a do Decision-1. Não compare o SVM sem calibração, porque isso o desfavorece injustamente.
    - **Regex:** se as regras tiverem prioridade ou mais de uma casar, use "uma regra só, sem conflito" como sinal de confiança, e documente.
@@ -432,7 +486,7 @@ Custo total por mil anexos de cada metodologia, separado em:
 
 Com esse custo total:
 
-- **Ponto de equilíbrio:** quantos erros ou revisões evitados por mil anexos o Decision-1 precisa para empatar com o regex e com o SVM. Como referência: a API custa cerca de US$ 21 pelos 130 mil anexos. Se um erro evitado valer US$ 1, bastam cerca de 21 erros evitados nos 130 mil (+0,016 ponto percentual de acurácia). Mostre o número real, com DBU e preços daqui.
+- **Ponto de equilíbrio:** quantos erros ou revisões evitados por mil anexos o Decision-1 precisa para empatar com o regex e com o SVM. Como referência, com a taxonomia de 3 classes (~1.000 tokens fixos) e janela de ~5.500 caracteres, a API custa cerca de US$ 14 a 18 pelos 130 mil anexos. Se um erro evitado valer US$ 1, bastam de 14 a 18 erros evitados nos 130 mil (≈ +0,01 ponto percentual de acurácia). Mostre o número real, com DBU e preços daqui.
 - **Erros absolutos nos 130 mil:** regex com 88% são cerca de 15.600 erros; SVM com 92%, cerca de 10.400. Mostre os erros do Decision-1 na mesma escala, com intervalo de confiança vindo do holdout.
 - **Sensibilidade:** um mapa de calor da metodologia vencedora para cada combinação de `faixa_sensibilidade_usd_erro` × `faixa_sensibilidade_usd_revisao`. Mostra a partir de que custo de erro o Decision-1 compensa, e se existe alguma faixa em que o SVM ou o regex vencem.
 - **Onde cada um ganha:** F1 por classe das três lado a lado. É comum o SVM ir bem nas classes frequentes e mal nas raras, e o regex falhar em textos sem título ou com OCR ruim. Destaque as classes em que o Decision-1 ganha ou perde.
@@ -448,7 +502,7 @@ Com esse custo total:
 **Tabelas:**
 
 - `benchmark_execucoes`: uma linha por metodologia × execução, com `benchmark_run_id`, `metodologia`, `fonte_resultado` (`reexecutado`/`historico`), cluster, início, fim, docs, docs com erro, tempos, custo por componente, `params_json`.
-- `benchmark_resultados`: uma linha por anexo × metodologia × execução, com `classe_original`, `classe_v1` (mapeada), `confianca` (pode ser nula), `latencia_s`, `custo_usd` (se houver por anexo), `erro`.
+- `benchmark_resultados`: uma linha por anexo × metodologia × execução, com `classe_original`, `classe_mapeada` (nas 3 classes do benchmark), `confianca` (pode ser nula), `latencia_s`, `custo_usd` (se houver por anexo), `erro`.
 - `vw_benchmark_resumo`: uma linha por metodologia, com médias entre repetições, custo por mil, custo mensal projetado, p50/p95, vazão, acurácia, % automatizado no corte equivalente e custo de revisão.
 
 **Organização do código:**
@@ -485,7 +539,7 @@ Os casos em que o modelo hesita, ou em que as metodologias discordam, são o mat
 |---|---|
 | `baixa_confianca` | `confianca < corte_baixa_confianca` |
 | `margem_estreita` | 1ª classe − 2ª classe `< margem_minima`, mesmo com confiança alta |
-| `conflito_metodologias` | Microsoft-Decision-1, A e B não escolhem a mesma classe (já mapeada para a v1) |
+| `conflito_metodologias` | Microsoft-Decision-1, A e B não escolhem a mesma classe (já mapeada para as classes do benchmark) |
 | `conflito_execucoes` | o mesmo anexo, com o mesmo `prompt_hash` e o mesmo modelo, mudou de classe entre execuções |
 | `instavel` | mesma classe, mas a probabilidade variou mais que `delta_prob_instavel` |
 | `conflito_prompt` | a classe mudou entre `prompt_hash` diferentes (mostra o efeito da mudança de prompt) |
@@ -554,7 +608,7 @@ Os casos em que o modelo hesita, ou em que as metodologias discordam, são o mat
 
 ### 3.8 Laboratório de prompts: amostra primeiro, rodada total só depois do gate (`src/laboratorio.py` + `07_laboratorio_prompts`)
 
-O benchmark completo tem mais de 130 mil anexos. Antes dele, a equipe precisa de um espaço para melhorar as descrições das classes rápido e barato, numa amostra. A rodada total só acontece quando uma versão do prompt passa um **gate** definido antes. Rodar 2.000 anexos custa cerca de US$ 0,33 e poucos minutos, então dá para iterar muitas vezes.
+O benchmark completo tem mais de 130 mil anexos. Antes dele, a equipe precisa de um espaço para melhorar as descrições das classes rápido e barato, numa amostra. A rodada total só acontece quando uma versão do prompt passa um **gate** definido antes. Rodar 2.000 anexos custa cerca de US$ 0,25 (taxonomia de 3 classes) e poucos minutos, então dá para iterar muitas vezes. Com 3 classes, o dev de 2.000 dá centenas de anexos por classe, o que é suficiente para medir diferenças por classe com precisão razoável.
 
 **Conjuntos de avaliação** (tabela `conjuntos_avaliacao`: `conjunto`, `versao_conjunto`, `anexo_id`, `estrato`), sorteados uma vez com `semente` fixa e congelados:
 
@@ -601,6 +655,27 @@ O benchmark completo tem mais de 130 mil anexos. Antes dele, a equipe precisa de
 
 Por classe, a incerteza é muito maior. Com 30 anexos por classe, só diferenças grandes são detectáveis. Por isso o gate usa o F1 por classe como piso e não como ranking.
 
+**Janela de texto: quanto do anexo é preciso ler?**
+
+Provavelmente não é preciso ler o anexo inteiro. As pistas das 3 classes ficam nas pontas:
+- **início:** "ACÓRDÃO", "EMENTA", "Relator", "Vistos, relatados e discutidos" / "SENTENÇA", "Vistos" / "EXCELENTÍSSIMO SENHOR DOUTOR JUIZ", "vem propor AÇÃO";
+- **fim:** "acordam... por unanimidade", "negar provimento" / "JULGO PROCEDENTE", "P.R.I." / "dos pedidos", "dá-se à causa o valor", "OAB".
+
+O meio (fundamentação, transcrições) é justamente onde está a confusão: um acórdão que transcreve a sentença, uma sentença que resume a inicial. Cortar o meio pode até ajudar. Cortar também reduz tokens, custo e TPM, que é o que limita a meta da seção 3.9.
+
+O teste fica assim:
+1. Com o campeão do prompt fixo, rode cada item de `laboratorio.janelas_teste` no mesmo `dev`, com `limpar_boilerplate` ligado e desligado em pelo menos uma janela.
+2. Compare cada janela com `inteiro`:
+   - acurácia e F1 **por classe**;
+   - erros confiantes e confiança média;
+   - tokens por anexo e latência;
+   - a lista dos anexos que mudaram de classe.
+3. Cruze com o tamanho do texto: anexos longos podem precisar de janela maior. Se for o caso, avalie uma janela proporcional ao tamanho.
+4. Escolha a **menor janela que não piora nenhuma classe** dentro do IC.
+5. A janela escolhida vira parte do campeão (`prompt_hash` + estratégia de janela) e passa pelo mesmo gate.
+
+Antes do teste, use a distribuição de `chars` da etapa 3 para estimar a economia: com ~2,7 caracteres por token no OCR, um anexo de 30 mil caracteres tem ~11 mil tokens, e uma janela de 5.500 caracteres tem ~2 mil.
+
 **O que não fazer:**
 - ajustar o prompt olhando o holdout;
 - comparar versões rodadas em dias diferentes sem rodar o campeão junto;
@@ -614,8 +689,8 @@ As outras metodologias processaram cerca de 130 mil anexos em cerca de 5,8 minut
 **Conta da meta**, com os números de referência:
 - 130 mil / 5,8 min = **≈ 22.400 anexos/min ≈ 374 por segundo**;
 - na referência, cada requisição simultânea rendeu cerca de 100 anexos/min (802/min com 8). Para a meta são precisas **≈ 210 a 260 requisições simultâneas** (latência de 0,55 a 0,69 s; aqui pode ser diferente);
-- tokens: 130 mil × ~3.900 ≈ **505 milhões de tokens, ≈ 87 milhões por minuto**. Provavelmente o limite que decide é a cota de tokens e requisições por minuto do deployment na Azure, não o código;
-- custo da rodada, no preço de referência: **≈ US$ 21**;
+- tokens, com a taxonomia de 3 classes (~1.000 fixos) e janela de ~4.000 a 6.000 caracteres: **≈ 2.500 a 3.200 por anexo, ≈ 325 a 420 milhões no total, ≈ 56 a 73 milhões por minuto** para a meta. Com a v1 de 22 classes e o texto inteiro, seriam ≈ 87 milhões por minuto ou mais. Provavelmente o limite que decide é a cota de tokens e requisições por minuto do deployment na Azure, não o código. Use os números medidos no laboratório, não estes;
+- custo da rodada, no preço de referência: **≈ US$ 14 a 18**;
 - extração: não entra na conta, porque o texto já vem do OCR. Ler 130 mil textos de uma tabela Delta leva segundos, então o relógio é praticamente só o da API.
 
 **O que fazer para chegar lá:**
@@ -668,20 +743,28 @@ As outras metodologias processaram cerca de 130 mil anexos em cerca de 5,8 minut
    - Depois liste só o que continuar faltando e espere as respostas:
      - da seção 2: API e fonte (tabela e colunas do texto de OCR);
      - da seção 3: caminho da pasta pessoal, schema pessoal e experimento do MLflow, se não estiverem preenchidos;
-     - da seção 3.6: as metodologias A e B;
+     - da seção 3.6: as metodologias A e B, os nomes das 3 classes nelas e se o corpus tem só esses 3 tipos;
      - da seção 3.8: rótulos disponíveis e critérios do gate;
      - da seção 3.9: o que os 5,8 min incluem e a cota do deployment.
-2. **Estrutura + setup** dentro de `<<pasta_pessoal>>`: pastas, `params.yaml`, `src/config.py`, `src/prompt.py` (com o teste do hash `c4ffefc2e54f`) e `00_setup` rodado.
+2. **Estrutura + setup** dentro de `<<pasta_pessoal>>`: pastas, `params.yaml`, `src/config.py`, `src/prompt.py` (com o teste dos hashes `c4ffefc2e54f` e `f96ed8ee75b1`) e `00_setup` rodado.
    - Aceite:
      - tabelas criadas no schema pessoal;
      - o teste do hash passando;
      - `git status` mostrando mudanças só dentro de `<<pasta_pessoal>>`.
 3. **Ingestão** do texto de OCR numa amostra de cerca de 50 anexos.
-   - Aceite: `anexos_texto` preenchida, com a distribuição de tamanho e o % de textos insuficientes reportados, e a segunda rodada não regrava nada.
-4. **Classificação com `ClienteMock`** na mesma amostra.
+   - Aceite:
+     - `anexos_texto` preenchida;
+     - reportados a distribuição de tamanho (antes e depois da limpeza de boilerplate, por classe se houver rótulo) e o % de textos insuficientes;
+     - a estimativa de tokens por anexo para cada janela de `janelas_teste`;
+     - a segunda rodada não regrava nada.
+4. **Classificação com `ClienteMock`** (realista, seção 2d) na mesma amostra.
    - Aceite: `classificacoes` e `execucoes` preenchidas; rodar de novo não duplica; derrubar no meio e retomar funciona.
-5. **Classificação com a API real** na amostra de 50 (o conjunto todo fica para a etapa 10).
-   - Aceite: zero erros não tratados, cerca de 2.900 tokens fixos + texto do anexo (média de cerca de 3.900 por anexo na referência, com a taxonomia v1) e custo em torno de US$ 0,16 por mil anexos se o preço for o mesmo. Reporte a latência medida neste caminho, sem compará-la com a da referência.
+5. **Classificação com a API real** na amostra de 50 (o conjunto todo fica para a etapa 10). **Depende da chave.** Enquanto ela não chega, deixe esta etapa pendente e siga para as próximas no modo sem chave (seção 2d), voltando aqui quando o secret existir.
+   - Aceite:
+     - zero erros não tratados;
+     - tokens fixos medidos da `benchmark_3c_v1` (estimativa de ~1.000) + janela;
+     - custo por mil anexos coerente com o preço;
+     - a latência medida neste caminho reportada, sem compará-la com a da referência.
 6. **Métricas + MLflow + dashboard.**
    - Aceite: todas as métricas da seção 3.5 calculadas para o `run_id` e uma comparação entre duas execuções funcionando.
 7. **Benchmark** (seção 3.6) no `dev` do laboratório: valida a comparação com A e B antes da rodada total.
@@ -703,7 +786,8 @@ As outras metodologias processaram cerca de 130 mil anexos em cerca de 5,8 minut
      - o scorecard campeão × desafiante sai com IC, McNemar e a lista de anexos que mudaram;
      - o gate gera o relatório de aprovado/reprovado por critério;
      - uma promoção fica registrada.
-   - A partir daqui, a equipe itera nas descrições. A etapa 10 só começa quando houver um campeão aprovado no gate.
+   - Inclui o teste de janela de texto, com a janela escolhida.
+   - A partir daqui, a equipe itera nas descrições e na janela. A etapa 10 só começa quando houver um campeão (prompt + janela) aprovado no gate. Sem chave, a infraestrutura fica pronta e validada com mock, e as rodadas reais ficam pendentes.
 10. **Vazão e rodada total** (seção 3.9).
     - Primeiro o teste de carga e o ensaio com mock no volume total; depois os 130 mil anexos com o campeão.
     - Aceite: curva de vazão × concorrência, tempo de parede no mesmo escopo das outras metodologias, custo e erros. Ao fim, o benchmark (05) é atualizado com o resultado completo.
@@ -711,4 +795,9 @@ As outras metodologias processaram cerca de 130 mil anexos em cerca de 5,8 minut
 
 ## Anexo: taxonomia
 
-O conteúdo completo está em `prompts/taxonomia_v1.json`: as instruções e as 22 classes, cada uma com o que é, sinais típicos e com o que não confundir. As 22 classes são as chaves de `classes` nesse arquivo; use exatamente esses identificadores (por exemplo `peticao_inicial`, `despacho`, `certidao`, `outro`) como valores válidos de `classe`.
+Duas taxonomias fornecidas em `prompts/`, cada uma com as instruções e as classes (o que é, sinais típicos e com o que não confundir):
+
+- `taxonomia_benchmark_3c_v1.json` (`prompt_hash` `f96ed8ee75b1`): `acordao`, `sentenca`, `peticao_inicial`, `outro`. É usada no benchmark.
+- `taxonomia_v1.json` (`prompt_hash` `c4ffefc2e54f`): 22 classes (por exemplo `peticao_inicial`, `despacho`, `certidao`, `outro`).
+
+Use exatamente as chaves de `classes` da taxonomia escolhida como valores válidos de `classe`.

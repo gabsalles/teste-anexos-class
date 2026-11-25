@@ -1,0 +1,35 @@
+{
+  "versao": "benchmark_3c_v1",
+  "descricao": "Taxonomia reduzida para o benchmark contra regex e SVM: acórdão, sentença e petição inicial, mais 'outro' como válvula de segurança. Derivada da taxonomia_v1 (22 classes).",
+  "instrucoes": {
+    "pergunta": "O documento em `documento.texto` é um acórdão, uma sentença, uma petição inicial ou outro tipo de peça?",
+    "contexto": "Anexo de processo judicial brasileiro, com texto extraído por OCR. O texto pode conter carimbos e rodapés de sistema (e-SAJ, PJe, PJe-JT, Projudi), numeração de folhas, timbres e erros de reconhecimento. Pode ter sido cortado no meio, indicado por '[... trecho omitido ...]'.",
+    "como_decidir": [
+      "Classifique pelo que o documento É, ou seja, quem o assina e qual ato ele pratica, e não pelo que ele cita, transcreve ou resume.",
+      "Quem assina decide: colegiado ou relator falando pela turma é acórdão; juiz de primeiro grau sozinho é sentença; advogado da parte autora é petição inicial.",
+      "Um acórdão costuma transcrever ou resumir a sentença recorrida, e continua sendo acórdão. Uma sentença costuma resumir os pedidos da petição inicial no relatório, e continua sendo sentença.",
+      "O título pode faltar ou estar ilegível por causa do OCR. Use o cabeçalho, quem fala (\"acordam\", \"julgo\", \"vem propor\") e o fecho (resultado do julgamento, dispositivo, pedidos e valor da causa).",
+      "Use 'outro' só quando o documento claramente não é nenhum dos três, por exemplo contestação, recurso, despacho, decisão interlocutória, certidão ou procuração."
+    ]
+  },
+  "classes": {
+    "acordao": {
+      "o_que_e": "Decisão colegiada de tribunal ou turma recursal (TJ, TRF, TRT, Turma Recursal) que julga recurso ou ação originária: ementa, relatório, voto do relator e resultado do julgamento por unanimidade ou maioria.",
+      "sinais": ["ACÓRDÃO", "EMENTA", "Relator(a)", "VOTO", "Vistos, relatados e discutidos", "acordam os integrantes / os desembargadores / os juízes da Turma", "por unanimidade / por maioria", "dar provimento / negar provimento", "Câmara, Turma, Seção"],
+      "nao_confundir": "Pode transcrever a sentença recorrida inteira e continua sendo acórdão: o que decide é o fecho colegiado (\"acordam\", resultado por unanimidade ou maioria). Decisão monocrática do relator, sem julgamento do colegiado, é 'outro'. Sentença é assinada por juiz de primeiro grau sozinho."
+    },
+    "sentenca": {
+      "o_que_e": "Pronunciamento do juiz de primeiro grau que encerra a fase de conhecimento ou a execução: julgamento de mérito, homologação de acordo, extinção com ou sem resolução de mérito.",
+      "sinais": ["SENTENÇA", "Vistos etc.", "É o relatório. Decido / Fundamento e decido", "JULGO PROCEDENTE / IMPROCEDENTE / PARCIALMENTE PROCEDENTE", "HOMOLOGO o acordo", "julgo extinto", "art. 485, 487 ou 924 do CPC", "Publique-se. Registre-se. Intimem-se.", "Juiz(a) de Direito / Juiz(a) do Trabalho / Juiz(a) Federal"],
+      "nao_confundir": "O relatório da sentença resume os pedidos da petição inicial; isso não a torna petição. Acórdão é julgado por colegiado, mesmo quando reproduz a sentença. Decisão que não encerra o processo (tutela, saneamento) é 'outro'."
+    },
+    "peticao_inicial": {
+      "o_que_e": "Peça do advogado da parte autora ou reclamante que inaugura o processo: endereçamento ao juízo, qualificação das partes, fatos, fundamentos jurídicos, pedidos e valor da causa. Inclui inicial do Juizado Especial e reclamação trabalhista.",
+      "sinais": ["EXCELENTÍSSIMO(A) SENHOR(A) DOUTOR(A) JUIZ(A)", "vem, respeitosamente, propor / ajuizar AÇÃO", "RECLAMAÇÃO TRABALHISTA", "DOS FATOS / DO DIREITO / DOS PEDIDOS", "requer a citação do réu", "dá-se à causa o valor de", "Termos em que pede deferimento", "OAB"],
+      "nao_confundir": "Contestação, réplica, recursos e petições intermediárias também são escritas por advogado, mas respondem a algo que já existe no processo; são 'outro'. A inicial pede a citação do réu e tem valor da causa."
+    },
+    "outro": {
+      "o_que_e": "Qualquer documento que não seja acórdão, sentença ou petição inicial: contestação, recurso, despacho, decisão interlocutória, decisão monocrática, certidão, procuração, documento pessoal, comprovante etc."
+    }
+  }
+}
